@@ -104,7 +104,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="cms\" />
+    <Folder Include="cms\Conn\" />
+    <Folder Include="cms\Func\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
