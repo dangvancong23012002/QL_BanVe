@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Đây là trang quản trị duoc tao boi thang_dev
+            Đây là trang quản trị duoc tao boi thanh_dev
         </div>
     </form>
 </body>
