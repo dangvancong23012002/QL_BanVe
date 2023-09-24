@@ -88,6 +88,7 @@
     </Compile>
     <Compile Include="cms\Conn\SQLDatabase.cs" />
     <Compile Include="cms\Func\Functions.cs" />
+    <Compile Include="cms\Models\TheLoai.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
