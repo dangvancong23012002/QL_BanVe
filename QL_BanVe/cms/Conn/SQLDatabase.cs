@@ -7,5 +7,6 @@ namespace QL_BanVe.cms.Conn
 {
     public class SQLDatabase
     {
+
     }
 }

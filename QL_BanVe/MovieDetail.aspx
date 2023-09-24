@@ -7,6 +7,7 @@
     <link href="assets/css/base.css" rel="stylesheet" />
     <link href="assets/css/grid.css" rel="stylesheet" />
     <link href="assets/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
     <title>Chi tiết vé</title>
 </head>
 <body>
@@ -29,9 +30,22 @@
                                 <i class="uil uil-search"></i>
                             </div>
                             <ul class="nav__list">
-                                <li><a href="#" class="nav__link">Tin mới 2023</a></li>
-                                <li><a href="#" class="nav__link">Y tế</a></li>
-                                <li><a href="#" class="nav__link">Giáo dục</a></li>
+                                <li><a href="#" class="nav__link">Thể loại</a></li>
+                                <li><a href="#" class="nav__link">Tất cả</a></li>
+                                <li><div class="dropdown__item">
+                                    <div class="nav__link">
+                                        Tài khoản<i class="uil uil-angle-down dropdown__arrow"></i>
+                                    </div>
+                                    <ul class="dropdown__menu">
+                                        <li>
+                                            <a href="#" class="dropdown__link">Đăng ký</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">Đăng nhập</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
