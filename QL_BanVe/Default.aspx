@@ -29,9 +29,9 @@
                                 <i class="uil uil-search"></i>
                             </div>
                             <ul class="nav__list">
-                                <li><a href="#" class="nav__link">Tin mới 2023</a></li>
-                                <li><a href="#" class="nav__link">Y tế</a></li>
-                                <li><a href="#" class="nav__link">Giáo dục</a></li>
+                                <li><a href="#" class="nav__link">Thể loại</a></li>
+                                <li><a href="#" class="nav__link">Tất cả</a></li>
+                                <li><span class="nav__link" id="username" runat="server"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                     <div class="card">
                         <div class="row sm-gutter">
                             <div class="col c-6 l-2-4">
-                                <a href="#" class="card__item">
+                                <a href="MovieDetail.aspx" class="card__item">
                                     <div class="card__item-img" style="background-image: url(./assets/img/harry_potter_hoangtulai.jpg)"></div>
                                     <h4 class="card__item-name">Harry Potter và hoàng tử lai</h4>
                                     <div class="card__item-action">
@@ -62,7 +62,7 @@
                                 </a>
                             </div>
                             <div class="col c-6 l-2-4">
-                                <a href="#" class="card__item">
+                                <a href="MovieDetail.aspx" class="card__item">
                                     <div class="card__item-img" style="background-image: url(./assets/img/harry_potter_hoangtulai.jpg)"></div>
                                     <h4 class="card__item-name">Cướp biển vùng Caribean 1: Lời nguyền của tàu Ngọc Trai Đen</h4>
                                     <div class="card__item-action">
@@ -82,7 +82,7 @@
                                 </a>
                             </div>
                             <div class="col c-6 l-2-4">
-                                <a href="#" class="card__item">
+                                <a href="MovieDetail.aspx" class="card__item">
                                     <div class="card__item-img" style="background-image: url(./assets/img/harry_potter_hoangtulai.jpg)"></div>
                                     <h4 class="card__item-name">Thông báo Khảo sát áp dụng Chương trình đào tạo mới năm 2022 cho các khóa 1910A, 2010A, 2110A</h4>
                                     <div class="card__item-action">
@@ -102,7 +102,7 @@
                                 </a>
                             </div>
                             <div class="col c-6 l-2-4">
-                                <a href="#" class="card__item">
+                                <a href="MovieDetail.aspx" class="card__item">
                                     <div class="card__item-img" style="background-image: url(./assets/img/harry_potter_hoangtulai.jpg)"></div>
                                     <h4 class="card__item-name">Thông báo Khảo sát áp dụng Chương trình đào tạo mới năm 2022 cho các khóa 1910A, 2010A, 2110A</h4>
                                     <div class="card__item-action">
@@ -122,7 +122,7 @@
                                 </a>
                             </div>
                             <div class="col c-6 l-2-4">
-                                <a href="#" class="card__item">
+                                <a href="MovieDetail.aspx" class="card__item">
                                     <div class="card__item-img" style="background-image: url(./assets/img/harry_potter_hoangtulai.jpg)"></div>
                                     <h4 class="card__item-name">Thông báo Khảo sát áp dụng Chương trình đào tạo mới năm 2022 cho các khóa 1910A, 2010A, 2110A</h4>
                                     <div class="card__item-action">

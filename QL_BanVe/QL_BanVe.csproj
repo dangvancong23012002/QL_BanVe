@@ -70,9 +70,13 @@
     <Content Include="Admin.aspx" />
     <Content Include="assets\css\base.css" />
     <Content Include="assets\css\grid.css" />
+    <Content Include="assets\css\login.css" />
+    <Content Include="assets\css\register.css" />
     <Content Include="assets\css\styles.css" />
     <Content Include="assets\img\harry_potter_hoangtulai.jpg" />
+    <Content Include="assets\js\login.js" />
     <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\register.js" />
     <Content Include="assets\video\harry_potter_hoangtulai.mp4" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
@@ -90,6 +94,7 @@
     </Compile>
     <Compile Include="cms\Conn\SQLDatabase.cs" />
     <Compile Include="cms\Func\Functions.cs" />
+    <Compile Include="cms\Models\TaiKhoan.cs" />
     <Compile Include="cms\Models\TheLoai.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
