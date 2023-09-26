@@ -12,19 +12,19 @@ namespace QL_BanVe
         protected void Page_Load(object sender, EventArgs e)
         {
             //// Kiểm tra nếu đã đăng nhập thì mới cho vào trang này
-            if (Session["DangNhap"] != null && Session["DangNhap"].ToString() == "1")
-            {
-                // Đã đăng nhập
-            }
-            else
-            {
-                // Nếu chưa đăng nhập -> Đẩy về trang Login.aspx
-                Response.Redirect("Login.aspx");
-            }
-            if (!IsPostBack)
-            {
-                username.InnerText = "Xin chào " + Session["TenDangNhap"].ToString();
-            }
+            //if (Session["DangNhap"] != null && Session["DangNhap"].ToString() == "1")
+            //{
+            //    // Đã đăng nhập
+            //}
+            //else
+            //{
+            //    // Nếu chưa đăng nhập -> Đẩy về trang Login.aspx
+            //    Response.Redirect("Login.aspx");
+            //}
+            //if (!IsPostBack)
+            //{
+            //    username.InnerText = "Xin chào " + Session["TenDangNhap"].ToString();
+            //}
         }
     }
 }

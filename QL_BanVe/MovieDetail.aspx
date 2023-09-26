@@ -54,43 +54,8 @@
             <main>
                 <div class="grid wide">
                     <div class="detail">
-                        <div class="row">
-                            <div class="col l-10">
-                                <div class="row row-pad">
-                                    <div class="col l-4">
-                                        <img src="assets/img/harry_potter_hoangtulai.jpg" class="detail__img" />
-                                    </div>
-                                    <div class="col l-8">
-                                        <div class="detail__content">
-                                            <div class="detail__name-movie">Harry Potter và hoàng tử Lai</div>
-                                                <div class="detail__category">Thể loai: Trinh Thám - Phiêu Lưu</div>
-                                                <div class="detail__calendar">Khởi chiếu: 10-10-2023</div>
-                                                <div class="detail__info">
-                                                    <p>Phòng chiếu: Tất cả các phòng</p>
-                                                    <p>Giờ chiếu: Mọi khung giờ</p>
-                                                </div>
-                                                <div class="">Nội dung</div>
-                                            <div class="detail__box-info">
-                                                <div class="detail__desc">
-                                                    Một thời đại tăm tối đã cận kề. Voldemort đã trở lại, 
-                                                    và các Tử thần Thực tử ngang nhiên lộng hành. Chúng tàn phá Hẻm Xéo, sát hại rất nhiều người, 
-                                                    thậm chí tàn phá cả thế giới Muggle. Một ngày nọ, cụ Dumbledore bất ngờ xuất hiện tại nhà Dursley 
-                                                    và đưa Harry đến một ngôi làng, nơi họ gặp một vị giáo sư đã về hưu là Horace Slughorn, cựu giáo viên môn 
-                                                    Độc dược và cũng là cựu Chủ nhiệm Nhà Slytherin. 
-                                                    Ông hiện tại đang bị đám Tử Thần Thực Tử truy nã và phải thay đổi nơi ở liên tục.
-                                                </div>
-                                            </div>   
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-2"></div>
-                        </div>
-                        <div class="detail__trailer row-10px">
-                            <div> Trailer</div>
-                            <video controls="controls">
-                                <source src="assets/video/harry_potter_hoangtulai.mp4" type="video/mp4" />
-                            </video>
+                        <div class="detail__info" id="detail" runat="server">
+                            
                         </div>
                         <div class="detail__room row-10px">
                             <div class="detail__room-tile">Chọn phòng chiếu phim</div>
