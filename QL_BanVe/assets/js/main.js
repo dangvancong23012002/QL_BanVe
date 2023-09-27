@@ -50,7 +50,7 @@ function timPhim() {
         xhr.open('post', 'cms/Ajax/Phim.aspx', false);
         xhr.onreadystatechange = () => {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                  
+                 
             } else {
                 alert(`Error: ${xhr.status}`);
             }
