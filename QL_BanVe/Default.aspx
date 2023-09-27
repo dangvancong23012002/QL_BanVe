@@ -6,6 +6,7 @@
 <head runat="server">
     <link href="assets/css/styles.css" rel="stylesheet" />
     <link href="assets/css/grid.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
     <title>Trang chủ</title>
 </head>
 <body>
@@ -29,9 +30,9 @@
                                 <i class="uil uil-search"></i>
                             </div>
                             <ul class="nav__list">
-                                <li><a href="#" class="nav__link">Tin mới 2023</a></li>
-                                <li><a href="#" class="nav__link">Y tế</a></li>
-                                <li><a href="#" class="nav__link">Giáo dục</a></li>
+                                <li><a href="#" class="nav__link">Thể loại</a></li>
+                                <li><a href="#" class="nav__link">Tất cả</a></li>
+                                <li><span class="nav__link" id="username" runat="server"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -40,107 +41,8 @@
             <main>
                 <div class="grid wide">
                     <div class="card">
-                        <div class="row sm-gutter">
-                            <div class="col c-6 l-2-4">
-                                <a href="#" class="card__item">
-                                    <div class="card__item-img" style="background-image: url(./assets/img/harry_potter_hoangtulai.jpg)"></div>
-                                    <h4 class="card__item-name">Harry Potter và hoàng tử lai</h4>
-                                    <div class="card__item-action">
-                                        <span class="card__item-like">
-                                            <i class="uil uil-heart"></i>
-                                        </span>
-                                        <div class="card__item-rating">
-                                            <i class="uil uil-star card__item-rating-icon--gold"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                        </div>
-                                        <span class="card__item-views">88 lượt xem</span>
-                                    </div>
-                                    <div class="card__item-date">12/8/2023</div>
-                                </a>
-                            </div>
-                            <div class="col c-6 l-2-4">
-                                <a href="#" class="card__item">
-                                    <div class="card__item-img" style="background-image: url(./assets/img/harry_potter_hoangtulai.jpg)"></div>
-                                    <h4 class="card__item-name">Cướp biển vùng Caribean 1: Lời nguyền của tàu Ngọc Trai Đen</h4>
-                                    <div class="card__item-action">
-                                        <span class="card__item-like">
-                                            <i class="uil uil-heart"></i>
-                                        </span>
-                                        <div class="card__item-rating">
-                                            <i class="uil uil-star card__item-rating-icon--gold"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                        </div>
-                                        <span class="card__item-views">88 lượt xem</span>
-                                    </div>
-                                    <div class="card__item-date">12/8/2023</div>
-                                </a>
-                            </div>
-                            <div class="col c-6 l-2-4">
-                                <a href="#" class="card__item">
-                                    <div class="card__item-img" style="background-image: url(./assets/img/harry_potter_hoangtulai.jpg)"></div>
-                                    <h4 class="card__item-name">Thông báo Khảo sát áp dụng Chương trình đào tạo mới năm 2022 cho các khóa 1910A, 2010A, 2110A</h4>
-                                    <div class="card__item-action">
-                                        <span class="card__item-like">
-                                            <i class="uil uil-heart"></i>
-                                        </span>
-                                        <div class="card__item-rating">
-                                            <i class="uil uil-star card__item-rating-icon--gold"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                        </div>
-                                        <span class="card__item-views">88 lượt xem</span>
-                                    </div>
-                                    <div class="card__item-date">12/8/2023</div>
-                                </a>
-                            </div>
-                            <div class="col c-6 l-2-4">
-                                <a href="#" class="card__item">
-                                    <div class="card__item-img" style="background-image: url(./assets/img/harry_potter_hoangtulai.jpg)"></div>
-                                    <h4 class="card__item-name">Thông báo Khảo sát áp dụng Chương trình đào tạo mới năm 2022 cho các khóa 1910A, 2010A, 2110A</h4>
-                                    <div class="card__item-action">
-                                        <span class="card__item-like">
-                                            <i class="uil uil-heart"></i>
-                                        </span>
-                                        <div class="card__item-rating">
-                                            <i class="uil uil-star card__item-rating-icon--gold"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                        </div>
-                                        <span class="card__item-views">88 lượt xem</span>
-                                    </div>
-                                    <div class="card__item-date">12/8/2023</div>
-                                </a>
-                            </div>
-                            <div class="col c-6 l-2-4">
-                                <a href="#" class="card__item">
-                                    <div class="card__item-img" style="background-image: url(./assets/img/harry_potter_hoangtulai.jpg)"></div>
-                                    <h4 class="card__item-name">Thông báo Khảo sát áp dụng Chương trình đào tạo mới năm 2022 cho các khóa 1910A, 2010A, 2110A</h4>
-                                    <div class="card__item-action">
-                                        <span class="card__item-like">
-                                            <i class="uil uil-heart"></i>
-                                        </span>
-                                        <div class="card__item-rating">
-                                            <i class="uil uil-star card__item-rating-icon--gold"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                            <i class="uil uil-star"></i>
-                                        </div>
-                                        <span class="card__item-views">88 lượt xem</span>
-                                    </div>
-                                    <div class="card__item-date">12/8/2023</div>
-                                </a>
-                            </div>
+                        <div class="row sm-gutter list-film">
+                                                  
                         </div>
                     </div>
                 </div>
