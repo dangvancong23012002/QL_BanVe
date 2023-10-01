@@ -100,7 +100,6 @@
     <Content Include="MovieDetail.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="UI\UI_TrangAdmin\adminContent.ascx" />
-    <Content Include="UI\UI_TrangAdmin\movieManager.ascx" />
     <Content Include="UI\UI_TrangAdmin\theSiderBar.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -159,13 +158,6 @@
     </Compile>
     <Compile Include="UI\UI_TrangAdmin\adminContent.ascx.designer.cs">
       <DependentUpon>adminContent.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="UI\UI_TrangAdmin\movieManager.ascx.cs">
-      <DependentUpon>movieManager.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI\UI_TrangAdmin\movieManager.ascx.designer.cs">
-      <DependentUpon>movieManager.ascx</DependentUpon>
     </Compile>
     <Compile Include="UI\UI_TrangAdmin\theSiderBar.ascx.cs">
       <DependentUpon>theSiderBar.ascx</DependentUpon>
