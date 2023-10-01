@@ -13,7 +13,7 @@ body {
     --color-success: #1dbc72;
     --color-danger: #dc3545;
     --color-primary: #ff4a4a;
-    --btnColor-hover: #acacac;
+    --btnColor-hover: rgba(203, 203, 203, 0.5);
     --text-desc: #888;
 }
 
@@ -51,6 +51,27 @@ body {
     color: var(--text-hover);
 }
 
+.btn.btn_icon {
+    background-color: transparent;
+    border-radius: 99px;
+    outline: none;
+    padding: 5px;
+    font-size: 20px;
+    min-width: 35px;
+    min-height: 35px;
+    justify-content: center;
+    border: none;
+}
+
+.btn.btn_icon.outline {
+    border: 1px solid black;
+}
+
+.btn.btn_icon:hover {
+    color: black;
+    background-color: var(--btnColor-hover);
+}
+
 .btn.btn-success {
     background-color: var(--color-success);
     color: white;
@@ -63,8 +84,14 @@ body {
     border-color: var(--color-primary);
 }
 
-.btn.btn-success:hover, .btn.btn-primary:hover, .btn:disabled, .btn:disabled:hover {
+.btn.btn-success:hover, .btn.btn-primary:hover {
     background-color: var(--btnColor-hover);
+    color: var(--text-hover);
+}
+
+.btn:disabled, .btn:disabled:hover {
+    background-color: var(--btnColor-hover);
+    cursor: default;
     color: var(--text-hover);
 }
 
@@ -105,7 +132,7 @@ body {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: transparent;
+    background-color: white;
     border: 1px solid;
     transition: all 0.2s linear;
 }
@@ -121,6 +148,7 @@ body {
     padding: 10px 20px;
     overflow: hidden;
     display: block;
+    transition: all 0.2s linear;
 }
 
 .adminPage_logo-img {
@@ -195,10 +223,7 @@ body {
 
 #adminPage_content {
     width: calc(100% - var(--siderbar-width));
-    min-height: 100vh;
-    padding: 10px;
     transition: all 0.2s linear;
-    display: flex;
 }
 
 .adminPage_content-wrapper {
@@ -208,10 +233,11 @@ body {
 
 .adminPage_content {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding: 10px;
 }
 
 .adminPage_content-header {
@@ -237,17 +263,61 @@ body {
     flex-direction: column;
     gap: 10px;
     justify-content: space-between;
+    overflow: auto;
+}
+
+.table_wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
 
 #table_view {
     width: 100%;
-    max-height: 70vh;
-    overflow: auto;
+    border-spacing: 0px;
+}
+
+#table_view tr td {
+    min-width: 100px;
+    max-width: 500px;
+    min-height: 100px;
+    max-height: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#table_view tr td img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.table_view-header {
+    background: var(--color-primary);
+    color: white;
+    position: sticky;
+    top: 0;
 }
 
 .table_view-header tr td {
     font-weight: bold;
     text-align: center;
+}
+
+.table_view-body tr:nth-of-type(2n) {
+    background: hsl(0 0% 0% / 0.1);
+}
+
+
+.table_view-body tr td span {
+    display: -webkit-box;
+    max-width: 100%;
+    width: max-content;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 
@@ -257,4 +327,64 @@ body {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;
+}
+
+
+/*--------------------------------------------------- ADMIN CONTENT MODAL ------------------------------------------------------------/*/
+
+.adminPage_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.modal_overLay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--btnColor-hover);
+    z-index: 99;
+}
+
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    min-width: 500px;
+    min-height: 750px;
+    background-color: white;
+    z-index: 100;
+}
+
+.modal_content-header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.modal_content-header h1 {
+    margin: 0;
+}
+
+.modal_content-body {
+    flex: 1;
+}
+
+.modal_content-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
 }

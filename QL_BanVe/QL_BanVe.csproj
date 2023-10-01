@@ -93,6 +93,7 @@
     <Content Include="assets\js\login.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\register.js" />
+    <Content Include="assets\js\request.js" />
     <Content Include="assets\video\harry_potter_hoang_tu_lai.mp4" />
     <Content Include="cms\Ajax\Phim.aspx" />
     <Content Include="Default.aspx" />

@@ -7,5 +7,6 @@ namespace QL_BanVe.cms.Models
 {
     public class TheLoai
     {
+
     }
 }

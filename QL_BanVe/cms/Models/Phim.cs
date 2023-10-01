@@ -34,5 +34,17 @@ namespace QL_BanVe.cms.Models
             cmd.Parameters.AddWithValue("@sTuKhoa", tuKhoa);
             return Func.Functions.getDataToTable(cmd);
         }
+
+        public static DataTable adminPageGetMovies(int ID = 0, string name = "", int limit = 10, int skip = 0)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "sp_AdminSelectPhim";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@PK_iPhimID", ID);
+            cmd.Parameters.AddWithValue("@STenPhim", name);
+            cmd.Parameters.AddWithValue("@limit", limit);
+            cmd.Parameters.AddWithValue("@skip", skip);
+            return Func.Functions.getDataToTable(cmd);
+        }
     }
 }
