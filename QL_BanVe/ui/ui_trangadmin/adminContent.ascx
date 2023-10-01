@@ -3,7 +3,7 @@
 <div class="adminPage_content">
     <div class="adminPage_content-header">
         <h1 class="header_title"><asp:Literal runat="server" ID="adminPage_title"/></h1>
-        <button class="btn btn-primary" type="button"><i class="fa fa-plus"></i>Thêm mới</button>
+        <button class="btn btn-primary" type="button" onclick="showModal('create')"><i class="fa fa-plus"></i>Thêm mới</button>
     </div>
     <div class="adminPage_content-control">
         <div class="wrapper_input">
@@ -11,7 +11,7 @@
             <asp:Label CssClass="text_desc" AssociatedControlID="inputKey" runat="server" ID="description" />
         </div>
         <button runat="server" id="btnSearch" class="btn btn-success"><i class="fa fa-search"></i>Tìm kiếm</button>
-        <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i>Cập nhật</button>
+        <button type="button" class="btn btn-primary" onclick="showModal('update')"><i class="fa fa-pencil"></i>Cập nhật</button>
         <button runat="server" type="button" id="btnDelete" class="btn btn-primary"><i class="fa fa-trash"></i>Xóa</button>
     </div>
     <div class="adminPage_content-table">
@@ -29,23 +29,23 @@
     </div>
 </div>
 
-<div class="adminPage_modal">
+<div class="adminPage_modal" id="adminContent_modal">
     <div class="modal_overLay"></div>
     <div class="modal_content">
         <div class="modal_content-header">
             <h1 id="modal_header">Thêm mới</h1>
-            <button type="button" class="btn btn_icon"><i class="fa fa-close"></i></button>
+            <button type="button" class="btn btn_icon" onclick="closeModal()"><i class="fa fa-close"></i></button>
         </div>
         <div class="modal_content-body" id="modal_body">
-
+            
         </div>
         <div class="modal_content-footer">
-            <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Thêm mới</button>
-            <button type="button" class="btn"><i class="fa fa-close"></i>Hủy</button>
+            <button type="button" class="btn btn-primary" id="btn_modal-submit"></button>
+            <button type="button" class="btn" onclick="closeModal()"><i class="fa fa-close"></i>Hủy</button>
         </div>
     </div>
 </div>
-
+<script src="assets/js/request.js" type="text/javascript"></script>
 <script>
     const config = {
         movie: {
@@ -63,7 +63,7 @@
                     type: "number",
                     widget: "select",
                     getOptions: {
-                        url: "/UI/UI_TrangAdmin/adminContent.ascx/getCategory",
+                        url: "/Admin.aspx/getCategory",
                         save: "PK_iTheLoaiID",
                         view: "sTenTheLoai",
                         method: "GET"
@@ -125,45 +125,94 @@
         return page;
     }
 
-    function showModal() {
-        let page = getPage();
-        if (!page) return;
-        const configPage = config[page];
-        const fields = configPage.fields || [];
-        for (let field of fields) {
-            const div = document.createElement('div');
-            div.className = "item_form"
-            if (field.widget) {
+    async function closeModal() {
+        const modal = document.getElementById("adminContent_modal");
+        modal.classList.remove("show");
+    }
 
-            }
+    function setTitleAndButtonModal(action) {
+        let title = document.getElementById("modal_header");
+        let buttonSubmit = document.getElementById("btn_modal-submit");
+        const modal = document.getElementById("adminContent_modal");
+        modal.classList.add("show");
+        if (action == "create") {
+            title.innerText = "Thêm mới";
+            buttonSubmit.innerHTML = `<i class="fa fa-plus"></i>Thêm mới`;
+        } else if (action == "update") {
+            title.innerText = "Cập nhật";
+            buttonSubmit.innerHTML = `<i class="fa fa-pencil"></i>Cập nhật`;
         }
     }
 
-    function createWidgetElement(config) {
+    async function showModal(action) {
+        let page = getPage();
+        if (!page) return;
+        const configPage = config[page];
+        if (!configPage) return;
+        setTitleAndButtonModal(action);
+        const fields = configPage.fields || [];
+        const bodyModal = document.getElementById("modal_body");
+        bodyModal.innerHTML = "";
+        for (let field of fields) {
+            const div = document.createElement('div');
+            div.className = "item_form"
+            const label = document.createElement("label");
+            label.htmlFor = field.field;
+            label.className = "item_form-label"
+            label.innerText = field.label + (field.required ? ": *" : ":");
+            div.appendChild(label);
+            const element = await createWidgetElement(field);
+            div.appendChild(element);
+            bodyModal.appendChild(div);
+        }
+    }
+
+    async function createWidgetElement(config) {
         let widget = config.widget || "";
-        const element = "";
+        let element = "";
         switch (widget) {
             case "select":
                 element = document.createElement("select");
+                element.id = config.field;
+                element.className = "item_form-item"
                 if (config.options && config.options.length > 0) {
-                    for (let { label, value } of options) {
+                    for (let { label, value } of config.options) {
                         if (!label || !value) continue;
                         const option = document.createElement("option");
                         option.value = value;
-                        option.label = label;
+                        option.innerText = label;
+                        element.appendChild(option);
                     }
                 } else if (config.getOptions?.url) {
-                    const result = request(config.getOptions.url, config.getOptions.body, config.getOptions.method);
-                    console.log(result);
+                    const result = await request(config.getOptions.url, config.getOptions.body, config.getOptions.method);
+                    let options = []
+                    if (result.status === 200) {
+                        options = result.data || [];
+                    }
+                    for (let option of options) {
+                        const opt = document.createElement("option");
+                        opt.value = option[config.getOptions.save];
+                        opt.innerText = option[config.getOptions.view];
+                        element.appendChild(opt);
+                    }
                 }
                 break;
             case "textarea":
                 element = document.createElement("textarea");
+                element.id = config.field;
+                element.className = "item_form-item"
                 break;
             default:
                 element = document.createElement("input");
+                element.name = config.field;
+                element.type = config.type;
+                element.accept = config.accept || "";
+                element.required = config.required || false;
+                element.id = config.field;
+                element.className = "item_form-item"
                 break;
         }
+        return element;
     }
 
 </script>
