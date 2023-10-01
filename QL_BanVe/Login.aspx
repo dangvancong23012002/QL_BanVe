@@ -66,16 +66,16 @@
             <div class="footer-container ">
                 <div class="grid wide ">
                     <div class="footer-wrap row ">
-                        <div class="footer-content col l-4 m-12 c-12 ">
+                        <div class="footer-content footer-padd l-4 m-12 c-12 ">
                             <h2 class="footer-content-header ">Giới thiệu</h2>
                             <p class="footer-content-text ">
-                                Movies Online trang mua sắm trực tuyến của thương hiệu thời trang Lama, thời trang nam, nữ, phụ kiện, giúp bạn tiếp cận xu hướng thời trang mới nhất.
+                                Betas Cinemas trang mua vé trực tuyến của thương hiệu thời Cinemas, vé chiếu theo khung giờ, vé chiếu theo lượt xem, phụ kiện, giúp bạn tiếp cận xu hướng thời trang mới nhất.
                             </p>
                         </div>
 
-                        <div class="col l-8 m-12 c-12 ">
+                        <div class="footer-padd l-8 m-12 c-12 ">
                             <div class="row ">
-                                <div class="footer-content col l-4 m-12 c-12 ">
+                                <div class="footer-content footer-padd l-4 m-12 c-12 ">
                                     <h2 class="footer-content-header ">Thông tin liên hệ</h2>
                                     <div class=" footer-contact ">
                                         <ul>
@@ -85,7 +85,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="footer-content col l-4 m-12 c-12 ">
+                                <div class="footer-content footer-padd l-4 m-12 c-12 ">
                                     <h2 class="footer-content-header ">Liên kết</h2>
                                     <div class=" toggle-footer ">
                                         <ul>
@@ -103,7 +103,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="footer-content col l-4 m-12 c-12 ">
+                                <div class="footer-content footer-padd l-4 m-12 c-12 ">
                                     <h2 class="footer-content-header ">Hỗ trợ</h2>
                                     <div class="footer-content toggle-footer ">
                                         <ul>

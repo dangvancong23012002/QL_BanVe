@@ -17,6 +17,7 @@
     --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
     --star-gold-color: #ffce3e;
     --header-sort-bar-height: 46px;
+    --font-semi-bold: 600;
 }
 
 * {
@@ -30,6 +31,11 @@ body {
     font-family: 'Nunito', sans-serif;
     font-family: 'Nunito Sans', sans-serif;
     font-family: 'Poppins', sans-serif;
+}
+
+input, button {
+    border: none;
+    outline: none;
 }
 
 i.bx {
@@ -91,10 +97,10 @@ a.header_logo-link {
     position: absolute;
     background: #fff;
     z-index: 1;
-    height: 80%;
+    /*height: 80%;*/
     opacity: 0.95;
     right: 31%;
-    border-radius: 3px;
+    border-radius: 16px;
     top: 32px;
     margin-top: 32px;
 }
@@ -153,6 +159,7 @@ a.header_logo-link {
 .sign-up-repassword,
 .sign-up-submit {
     display: flex;
+    align-items: center;
 }
 
 button#show-psw-btn {
@@ -162,24 +169,35 @@ button#show-psw-btn {
 #input-email,
 #input-password,
 #input-repassword,
-.submit-button,
+/*.submit-button,*/
 #input-username {
-    padding: 8px 7px;
+    border-radius: 6px;
+    border: 2px solid #59585f;
+    padding: 14px 12px;
     flex: 1;
     flex-shrink: 0;
-    border: 1px solid #000;
     margin-bottom: 10px;
+    transition: border .4s;
 }
 
 .submit-button,
 .sign-up-submit button {
     background: var(--red-color);
-    opacity: 1;
+    width: 100%;
+    border-radius: 6px;
+    padding: 18px 2rem;
+    background: linear-gradient(180deg, var(--red-color), #f26448);
+    color: #fff;
+    font-weight: var(--font-semi-bold);
+    box-shadow: 0 6px 24px hsla(17, 85%, 54%, .5);
+    margin-bottom: 16px;
+    cursor: pointer;
 }
 
 .show-password {
     display: flex;
     align-items: center;
+    margin-bottom: 16px;
 }
 
 .home-wrap .sing_in {
@@ -234,10 +252,16 @@ footer {
 .footer-content-text {
     font-size: 14px;
     color: var(--primary-text);
+    text-align: justify;
 }
 
 .footer-contact ul {
     padding: 0;
+}
+
+.footer-padd {
+    padding-right: 12px;
+    padding-left: 12px;
 }
 
 .footer-contact li {
@@ -267,6 +291,7 @@ footer {
 /* Responsive */
 
 @media (max-width:1023px) {
+    
 }
 
 
@@ -309,4 +334,19 @@ footer {
     .form {
         margin: 24px 15px 24px 15px;
     }
+}
+
+::-webkit-scrollbar {
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #9f9ca4;
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(219, 15%, 20%);
 }
