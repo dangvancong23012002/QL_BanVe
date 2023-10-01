@@ -15,12 +15,30 @@ namespace QL_BanVe
     {
 
         /// <summary>
-        /// form1 control.
+        /// adminSideBar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::QL_BanVe.UI.UI_TrangAdmin.theSiderBar adminSideBar;
+
+        /// <summary>
+        /// adminPage_content control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm adminPage_content;
+
+        /// <summary>
+        /// adminContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::QL_BanVe.UI.UI_TrangAdmin.adminContent adminContent;
     }
 }

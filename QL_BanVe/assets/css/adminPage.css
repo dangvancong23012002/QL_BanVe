@@ -7,8 +7,79 @@ body {
     height: 100%;
     margin: 0;
     --siderbar-width: 250px;
+    --logo_height: 20%;
     --hover-color: #ff4a4a;
+    --text-hover: white;
+    --color-success: #1dbc72;
+    --color-danger: #dc3545;
+    --color-primary: #ff4a4a;
+    --btnColor-hover: #acacac;
+    --text-desc: #888;
 }
+
+/*--------------------------------------------------- CUSTOMER WIDGET ------------------------------------------------------------/*/
+
+.wrapper_input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.text_desc {
+    font-size: 14px;
+    color: var(--text-desc);
+}
+
+.btn {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.btn * {
+    pointer-events: none;
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+    color: var(--text-hover);
+}
+
+.btn.btn-success {
+    background-color: var(--color-success);
+    color: white;
+    border-color: var(--color-success);
+}
+
+.btn.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.btn.btn-success:hover, .btn.btn-primary:hover, .btn:disabled, .btn:disabled:hover {
+    background-color: var(--btnColor-hover);
+    color: var(--text-hover);
+}
+
+/*--------------------------------------------------- CUSTOMER WIDGET END ------------------------------------------------------------/*/
+
+.empty_page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    font-weight: bold;
+}
+
 .adminPage_wrapper {
     width: 100%;
     height: 100%;
@@ -17,6 +88,8 @@ body {
     display: flex;
     flex-wrap: nowrap;
 }
+
+/*--------------------------------------------------- ADMIN SIDERBAR ------------------------------------------------------------/*/
 
 .adminPage_siderBar-wrapper {
     width: var(--siderbar-width);
@@ -37,13 +110,14 @@ body {
     transition: all 0.2s linear;
 }
 
-.adminPage_siderBar.collapsed {
+.collapsed {
     --siderbar-width: 100px;
+    --logo_height: 10%;
 }
 
 .adminPage_logo {
     width: 100%;
-    height: 20%;
+    height: var(--logo_height);
     padding: 10px 20px;
     overflow: hidden;
     display: block;
@@ -59,7 +133,7 @@ body {
 
 .adminPage_siderBar-menu {
     width: 100%;
-    height: 75%;
+    height: calc(100% - (var(--logo_height) + 5%));
     overflow: auto;
     padding: 10px 0;
     margin: 0;
@@ -71,7 +145,7 @@ body {
     border-style: solid;
 }
 
-.adminPage_siderBar-menuItem {
+.adminPage_siderBar-menuItem a {
     width: 100%;
     padding: 10px;
     text-align: center;
@@ -83,6 +157,8 @@ body {
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
+    color: black;
+    text-decoration: none;
 }
 
 .adminPage_siderBar-menuItem i, .adminPage_siderBar-menuItem span {
@@ -90,17 +166,17 @@ body {
     white-space: nowrap;
 }
 
-.adminPage_siderBar.collapsed .adminPage_siderBar-menuItem  {
+.collapsed .adminPage_siderBar-menuItem a {
     justify-content: center;
 }
 
-.adminPage_siderBar.collapsed .adminPage_siderBar-menuItem span {
+.collapsed .adminPage_siderBar-menuItem span {
     display: none;
 }
 
-.adminPage_siderBar-menuItem:hover, .adminPage_siderBar-menuItem.active, .adminPage_siderBar-collapse:hover {
+.adminPage_siderBar-menuItem:hover a, .adminPage_siderBar-menuItem.active a, .adminPage_siderBar-collapse:hover {
     background-color: var(--hover-color);
-    color: white;
+    color: var(--text-hover);
 }
 
 .adminPage_siderBar-collapse {
@@ -115,14 +191,70 @@ body {
     pointer-events: none;
 }
 
-#form1 {
+/*--------------------------------------------------- ADMIN CONTENT ------------------------------------------------------------/*/
+
+#adminPage_content {
     width: calc(100% - var(--siderbar-width));
     min-height: 100vh;
     padding: 10px;
+    transition: all 0.2s linear;
+    display: flex;
+}
+
+.adminPage_content-wrapper {
+    width: 100%;
+    height: 100%;
 }
 
 .adminPage_content {
     width: 100%;
     height: 100%;
-    background-color: var(--hover-color);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.adminPage_content-header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.adminPage_content-control {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.adminPage_content-table {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+#table_view {
+    width: 100%;
+    max-height: 70vh;
+    overflow: auto;
+}
+
+.table_view-header tr td {
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.table_footer {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
 }

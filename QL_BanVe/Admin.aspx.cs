@@ -11,7 +11,13 @@ namespace QL_BanVe
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string page = Request.Params["page"];
+            if (page != null) {
+                adminContent.Attributes["content"] = page;
+            } else
+            {
+                adminPage_content.InnerHtml = "<div class='empty_page'>Chào mừng đến với màn hình quản trị</div>";
+            }
         }
     }
 }
