@@ -79,6 +79,7 @@
     <Content Include="assets\img\cuop_bien_caribe_1.jpg" />
     <Content Include="assets\img\harry_potter_hoang_tu_lai.jpg" />
     <Content Include="assets\img\hoi_ket.jpg" />
+    <Content Include="assets\js\detail.js" />
     <Content Include="assets\js\login.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\register.js" />

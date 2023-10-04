@@ -418,6 +418,39 @@ header {
 .detail__seat-width {
     width: 400px;
 }
+
+.detail__buy-btn {
+    width: 40%;
+    height: 30px;
+}
+
+.detail__modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 2rem;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+    z-index: 100;
+}
+
+.detail__modal-content {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background: #fff;
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.active-modal {
+    opacity: 1;
+    visibility: visible;
+}
 /*Footer*/
 footer {
     border-top: 3px solid #ccc;

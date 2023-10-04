@@ -40,7 +40,7 @@
                         <label for="input-email">
                             <i class='bx bxs-envelope'></i>
                         </label>
-                        <input type="text" name="input-email" id="input-email" placeholder=" Your Fullname*" />
+                        <input type="text" name="input-email" id="input-email" placeholder=" Your Email*" />
                         <p class="message email-message"></p>
                     </div>
                     <div class="sign-up-password">
@@ -85,11 +85,15 @@
             <div class="footer-container ">
                 <div class="grid wide ">
                     <div class="footer-wrap row ">
-                        <div class="footer-content footer-padd l-4 m-12 c-12 ">
-                            <h2 class="footer-content-header ">Giới thiệu</h2>
-                            <p class="footer-content-text ">
-                                Betas Cinemas trang mua vé trực tuyến của thương hiệu thời Cinemas, vé chiếu theo khung giờ, vé chiếu theo lượt xem, phụ kiện, giúp bạn tiếp cận xu hướng thời trang mới nhất.
-                            </p>
+                        <div class="footer-padd l-4 m-12 c-12 ">
+                            <div class="row">
+                                <div class="footer-padd c-12">
+                                    <h2 class="footer-content-header ">Giới thiệu</h2>
+                                    <p class="footer-content-text ">
+                                        Betas Cinemas trang mua vé trực tuyến của thương hiệu thời Cinemas, vé chiếu theo khung giờ, vé chiếu theo lượt xem, phụ kiện, giúp bạn tiếp cận xu hướng thời trang mới nhất.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="footer-padd l-8 m-12 c-12 ">

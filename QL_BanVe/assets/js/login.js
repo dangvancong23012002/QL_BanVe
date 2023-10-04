@@ -23,6 +23,7 @@ const usernameValidate = () => {
     if (username === "") {
         showErrorStyles(usernameContainer, usernameInputBox);
         usernameMessage.innerHTML = "Hãy điền tên tài khoản";
+        /*console.log("Hãy điền tên tài khoản");*/
     }
     else {
         removeErrorStyles(usernameContainer, usernameInputBox);
@@ -39,16 +40,19 @@ const passwordValidate = () => {
     if (password === "") {
         showErrorStyles(passwordContainer, passwordInputBox);
         passwordMessage.innerHTML = "Hãy điền mật khẩu";
+        /*console.log("Hãy điền tên mật khẩu");*/
     }
-    /*
+    
     else if (password.length <= 5) {
         showErrorStyles(passwordContainer, passwordInputBox);
         passwordMessage.innerHTML = "Mật khẩu phải lớn hơn 5 ký tự";
+        /*console.log("Mật khẩu phải lớn hơn 5 ký tự");*/
     }
-    */
+    
     else {
         removeErrorStyles(passwordContainer, passwordInputBox);
         passwordMessage.innerHTML = "";
+        console.log("Validate Successfully!")
     }
 }
 

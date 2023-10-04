@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="assets/css/base.css" rel="stylesheet" />
     <link href="assets/css/grid.css" rel="stylesheet" />
     <link href="assets/css/styles.css" rel="stylesheet" />
@@ -178,9 +179,28 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="detail__buy">
+                            <button class="detail__buy-btn">Đặt vé</button>
+                        </div>
                     </div>
                 </div>
             </main>
+            <div class="detail__modal">
+                <div class="detail__modal-content">
+                    <div>Xác nhận thông tin đặt vé</div>
+                    <div>Tên phim: Hồi kết 2019</div>
+                    <div class="">Phòng chiếu: Phòng 1</div>
+                    <div>Giờ chiếu: 12h - 2h</div>
+                    <div>Số lượng vé: 1</div>
+                    <div class="">Ghế chọn: 12</div>
+                    <div>Đồ ăn: Bỏng ngô - Số lượng: 2</div>
+                    <div>Thanh toán: Tiền mặt</div>
+                    <hr />
+                    <div>Tổng tiền: 2000000đ</div>
+                    <button class="detail__modal-close">Huỷ</button>
+                    <button>Đồng ý</button>
+                </div>
+            </div>
             <footer class="footer ">
                 <div class="footer-container ">
                     <div class="grid wide ">
@@ -252,6 +272,6 @@
             </footer>
         </div>
     </form>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/detail.js"></script>
 </body>
 </html>
