@@ -150,7 +150,14 @@ namespace QL_BanVe.UI.UI_TrangAdmin
 
                         if (value.IndexOf("/") >= 0 && value.IndexOf(".") >= 0)
                         {
-                            body += "<td data-cell='" + column.ColumnName + "'><img src='" + value + "' title='" + column.ColumnName + "'/></td>";
+                            if (value.EndsWith(".mp4"))
+                            {
+                                body += "<td data-cell='" + column.ColumnName + "'><video width='350' height='150' controls title='" + column.ColumnName + "'><source src='" + value + "' type=\"video/mp4\"></video></td>";
+                            }
+                            else
+                            {
+                                body += "<td data-cell='" + column.ColumnName + "'><img src='" + value + "' title='" + column.ColumnName + "'/></td>";
+                            }
                         }
                         else
                         {
