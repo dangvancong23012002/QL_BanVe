@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="assets/css/login.css" rel="stylesheet" />
     <link href="assets/css/grid.css" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet' />
@@ -18,59 +19,68 @@
                 <div class=" header_text__logo ">
                     <a href="trangchu.aspx" class=" header_logo-link ">Betas Cinemas</a>
                 </div>
-                <h2>Đăng Nhập</h2>
             </header>
         </div>
         <div class="containner">
-            <div class="home-wrap sing_in">
-                <div class="home-tiltle">
-                    <h2>Đăng Nhập</h2>
+            <div class="row">
+                <div class="footer-padd sing-in-center c-12">
+                    <div class="home-wrap sing_in">
+                        <div class="home-tiltle">
+                            <h2>Đăng Nhập</h2>
+                        </div>
+                        <div class="form">
+                            <div class="sign-in-username">
+                                <div class="form__input">
+                                    <label for="input-username">
+                                        <i class='bx bxs-user'></i>
+                                    </label>
+                                    <input type="text" name="input-username" id="input-username" placeholder="Username*" />
+                                </div>
+                                <p class="message username-message"></p>
+                            </div>
+                            <div class="sign-in-password">
+                                <div class="form__input">
+                                    <label for="input-password">
+                                        <i class='bx bxs-lock'></i>
+                                    </label>
+                                    <input type="password" name="input-password" id="input-password" placeholder="Password*" />
+                                </div>
+                                <p class="message password-message"></p>
+                            </div>
+                            <div class="show-password">
+                                <label for="show-psw-btn">
+                                    <i class='bx bxs-bullseye'></i>
+                                </label>
+                                <button type="button" id="show-psw-btn">Hiển thị password</button>
+                            </div>
+                            <div id="messeage" runat="server"></div>
+                            <div class="sign-in-submit">
+                                <p class="sign-in-status"></p>
+                                <button type="submit" class="submit-button">Đăng Nhập</button>
+                            </div>
+                            <div class="form-footer">
+                                <span>Bạn mới biết đến Betas Cinemas?</span>
+                                <p><a href="Register.aspx">Đăng Kí</a></p>
+                            </div>
+                            <p id="notice" class="login__notice" runat="server"></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form">
-                    <div class="sign-in-username">
-                        <label for="input-username">
-                            <i class='bx bxs-user'></i>
-                        </label>
-                        <input type="text" name="input-username" id="input-username" placeholder="Username*" />
-                        <p class="message username-message"></p>
-                    </div>
-                    <div class="sign-in-password">
-                        <label for="input-password">
-                            <i class='bx bxs-lock'></i>
-                        </label>
-                        <input type="password" name="input-password" id="input-password" placeholder="Password*" />
-                        <p class="message password-message"></p>
-                    </div>
-                    <div class="show-password">
-                        <label for="show-psw-btn">
-                            <i class='bx bxs-bullseye'></i>
-                        </label>
-                        <button type="button" id="show-psw-btn">Hiển thị password</button>
-                    </div>
-                    <div id="messeage" runat="server"></div>
-                    <div class="sign-in-submit">
-                        <p class="sign-in-status"></p>
-                        <button type="submit" class="submit-button">Đăng Nhập</button>
-                    </div>
-                    <div class="form-footer">
-                        <span>Bạn mới biết đến Betas Cinemas?</span>
-                        <p><a href="Register.aspx">Đăng Kí</a></p>
-                    </div>
-                    <p id="notice" class="login__notice" runat="server"></p>
-                </div>
-
-
             </div>
         </div>
         <footer class="footer ">
             <div class="footer-container ">
                 <div class="grid wide ">
                     <div class="footer-wrap row ">
-                        <div class="footer-content footer-padd l-4 m-12 c-12 ">
-                            <h2 class="footer-content-header ">Giới thiệu</h2>
-                            <p class="footer-content-text ">
-                                Betas Cinemas trang mua vé trực tuyến của thương hiệu thời Cinemas, vé chiếu theo khung giờ, vé chiếu theo lượt xem, phụ kiện, giúp bạn tiếp cận xu hướng thời trang mới nhất.
-                            </p>
+                        <div class="footer-padd l-4 m-12 c-12 ">
+                            <div class="row">
+                                <div class="footer-padd c-12">
+                                    <h2 class="footer-content-header ">Giới thiệu</h2>
+                                    <p class="footer-content-text ">
+                                        Betas Cinemas trang mua vé trực tuyến của thương hiệu thời Cinemas, vé chiếu theo khung giờ, vé chiếu theo lượt xem, phụ kiện, giúp bạn tiếp cận xu hướng thời trang mới nhất.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="footer-padd l-8 m-12 c-12 ">
