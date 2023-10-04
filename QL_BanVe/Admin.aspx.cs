@@ -173,8 +173,15 @@ namespace QL_BanVe
                 foreach (string f in formFiles.AllKeys)
                 {
                     HttpPostedFile file = formFiles[f];
-                    file.SaveAs(@"C:\Users\PC\source\repos\QL_BanVe\QL_BanVe\assets\img\" + file.FileName);
-                    formData.Set(f, "/assets/img/" + file.FileName);
+                    if (file.ContentType.StartsWith("video/"))
+                    {
+                        file.SaveAs(@"C:\Users\PC\source\repos\QL_BanVe\QL_BanVe\assets\video\" + file.FileName);
+                        formData.Set(f, "/assets/video/" + file.FileName);
+                    } else
+                    {
+                        file.SaveAs(@"C:\Users\PC\source\repos\QL_BanVe\QL_BanVe\assets\img\" + file.FileName);
+                        formData.Set(f, "/assets/img/" + file.FileName);
+                    }
                 }
 
                 handleAction(formData);
