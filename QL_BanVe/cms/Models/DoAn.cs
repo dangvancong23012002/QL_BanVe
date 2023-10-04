@@ -1,101 +1,92 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Web;
 
 namespace QL_BanVe.cms.Models
 {
-    public class Phim
+    public class DoAn
     {
         public static string[] getColumns()
         {
-            string[] columns = new string[10] { "PK_iPhimID", "FK_iTheLoaiID", "sTenPhim", "sAnh", "sAnhQuangCao", "dNgayChieu", "sNoiDung", "fGia", "sTrailer", "iThoiLuong" };
+            string[] columns = new string[4] { "PK_iDoAnID", "sTenDoAn", "fGia", "iSoLuong" };
             return columns;
         }
-        public static DataTable thongTinPhim()
+        public static DataTable thongTinDoAn()
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "sp_SelectPhim";
+            cmd.CommandText = "sp_SelectDoAn";
             cmd.CommandType = CommandType.StoredProcedure;
             return Func.Functions.getDataToTable(cmd);
         }
 
-        public static DataTable thongTinPhimByID(string id)
+        public static DataTable thongTinDoAnByID(string id)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "sp_SelectPhimByID";
+            cmd.CommandText = "sp_SelectDoAnByID";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@PK_iPhimID", id);
+            cmd.Parameters.AddWithValue("@PK_iDoAnID", id);
             return Func.Functions.getDataToTable(cmd);
         }
 
-        public static DataTable timPhim(string tuKhoa)
+        public static DataTable adminPageGetProduct(int ID = 0, string name = "", int limit = 10, int skip = 0)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "sp_TimPhim";
+            cmd.CommandText = "sp_AdminSelectDoAn";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@sTuKhoa", tuKhoa);
-            return Func.Functions.getDataToTable(cmd);
-        }
-
-        public static DataTable adminPageGetMovies(int ID = 0, string name = "", int limit = 10, int skip = 0)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "sp_AdminSelectPhim";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@PK_iPhimID", ID);
-            cmd.Parameters.AddWithValue("@STenPhim", name);
+            cmd.Parameters.AddWithValue("@PK_iDoAnID", ID);
+            cmd.Parameters.AddWithValue("@sTenDoAn", name);
             cmd.Parameters.AddWithValue("@limit", limit);
             cmd.Parameters.AddWithValue("@skip", skip);
             return Func.Functions.getDataToTable(cmd);
         }
-        public static string insertMovie(NameValueCollection data)
+        public static string insertProduct(NameValueCollection data)
         {
             try
             {
                 string[] columns = getColumns();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "sp_AdminCreatePhim";
+                cmd.CommandText = "sp_AdminCreateDoAn";
                 cmd.CommandType = CommandType.StoredProcedure;
                 foreach (string column in columns)
                 {
-                    if (String.IsNullOrEmpty(data.Get(column)) && column != "PK_iPhimID")
+                    if (String.IsNullOrEmpty(data.Get(column)) && column != "PK_iDoAnID")
                     {
                         return "failed!";
                     }
-                    else if (column != "PK_iPhimID")
+                    else if (column != "PK_iDoAnID")
                     {
                         cmd.Parameters.AddWithValue("@" + column, data.Get(column));
                     }
                 }
                 Func.Functions.excuteNonQuery(cmd);
                 return "success";
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return "failed";
             }
         }
-        public static string updateMovie(NameValueCollection data)
+        public static string updateProduct(NameValueCollection data)
         {
             try
             {
                 string[] columns = getColumns();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "sp_AdminUpdatePhim";
+                cmd.CommandText = "sp_AdminUpdateDoAn";
                 cmd.CommandType = CommandType.StoredProcedure;
                 foreach (string column in columns)
                 {
-                    if (String.IsNullOrEmpty(data.Get(column)) && column != "PK_iPhimID")
+                    if (String.IsNullOrEmpty(data.Get(column)) && column != "PK_iDoAnID")
                     {
                         return "failed!";
                     }
-                    else if (column == "PK_iPhimID")
+                    else if (column == "PK_iDoAnID")
                     {
-                        cmd.Parameters.AddWithValue("@PK_iPhimID", Convert.ToInt32(data.Get("id")));
+                        cmd.Parameters.AddWithValue("@PK_iDoAnID", Convert.ToInt32(data.Get("id")));
                     }
                     else
                     {
@@ -110,16 +101,18 @@ namespace QL_BanVe.cms.Models
                 return "failed";
             }
         }
-        public static string deleteMovie(int ID)
+        public static string deleteProduct(int ID)
         {
-            try {
+            try
+            {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "sp_AdminRemovePhim";
+                cmd.CommandText = "sp_AdminRemoveDoAn";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@PK_iPhimID", ID);
+                cmd.Parameters.AddWithValue("@PK_iDoAnID", ID);
                 Func.Functions.excuteNonQuery(cmd);
                 return "success";
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return "failed";
             }

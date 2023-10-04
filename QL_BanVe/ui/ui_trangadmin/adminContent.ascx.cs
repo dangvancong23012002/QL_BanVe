@@ -87,10 +87,13 @@ namespace QL_BanVe.UI.UI_TrangAdmin
                             dt = Phim.adminPageGetMovies(ID, search, limit, skip);
                             break;
                         case "room":
+                            dt = Phong.adminPageGetRooms(ID, search, limit, skip);
                             break;
                         case "category":
+                            dt = TheLoai.adminPageGetCategory(ID, search, limit, skip);
                             break;
                         case "product":
+                            dt = DoAn.adminPageGetProduct(ID, search, limit, skip);
                             break;
                         case "users":
                             break;

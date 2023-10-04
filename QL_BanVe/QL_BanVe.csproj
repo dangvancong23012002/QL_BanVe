@@ -90,6 +90,7 @@
     <Content Include="assets\img\cuop_bien_caribe_1.jpg" />
     <Content Include="assets\img\harry_potter_hoang_tu_lai.jpg" />
     <Content Include="assets\img\hoi_ket.jpg" />
+    <Content Include="assets\js\adminConfig.js" />
     <Content Include="assets\js\login.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\register.js" />
@@ -121,7 +122,9 @@
     </Compile>
     <Compile Include="cms\Conn\SQLDatabase.cs" />
     <Compile Include="cms\Func\Functions.cs" />
+    <Compile Include="cms\Models\DoAn.cs" />
     <Compile Include="cms\Models\Phim.cs" />
+    <Compile Include="cms\Models\Phong.cs" />
     <Compile Include="cms\Models\TaiKhoan.cs" />
     <Compile Include="cms\Models\TheLoai.cs" />
     <Compile Include="Default.aspx.cs">

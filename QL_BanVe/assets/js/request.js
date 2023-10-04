@@ -37,7 +37,6 @@
         };
 
         xmlhttp.open(method, url, true);
-
         //const token = localStorage.getItem('token')
         //if (token) {
         //    xmlhttp.setRequestHeader("Authorization", token)

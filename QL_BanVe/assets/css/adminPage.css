@@ -364,9 +364,12 @@ body {
     gap: 5px;
     padding: 20px;
     min-width: 500px;
-    min-height: 750px;
+    max-width: 100vw;
+    min-height: max-content;
+    max-height: 100vh;
     background-color: white;
     z-index: 100;
+    overflow: auto;
 }
 
 .modal_content-header {
@@ -388,6 +391,12 @@ body {
     width: 100%;
     flex: 1;
     gap: 10px;
+}
+
+#modal_form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .item_form {
@@ -413,4 +422,42 @@ body {
     align-items: center;
     justify-content: flex-end;
     gap: 5px;
+}
+
+/*--------------------------------------------------- CUSTOM INPUT FILE ------------------------------------------------------------/*/
+
+.item_wrapper-inputFile {
+    display: flex;
+    gap: 5px;
+}
+
+.btn_input-file {
+    width: max-content;
+    padding: 10px 20px;
+    background-color: #51ca61;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.item_input-file {
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: var(--btnColor-hover);
+    border: 1px solid;
+    padding: 0 10px;
+    max-width: 100%;
+}
+
+.item_input-file.show {
+    display: flex;
+}
+
+.item_input-name {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }

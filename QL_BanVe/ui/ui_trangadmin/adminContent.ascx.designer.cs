@@ -51,15 +51,6 @@ namespace QL_BanVe.UI.UI_TrangAdmin
         protected global::System.Web.UI.HtmlControls.HtmlButton btnSearch;
 
         /// <summary>
-        /// btnDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnDelete;
-
-        /// <summary>
         /// table_header control.
         /// </summary>
         /// <remarks>

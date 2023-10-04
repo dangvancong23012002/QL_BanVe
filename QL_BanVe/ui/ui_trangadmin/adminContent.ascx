@@ -7,12 +7,12 @@
     </div>
     <div class="adminPage_content-control">
         <div class="wrapper_input">
-            <asp:TextBox CssClass="input" runat="server" ID="inputKey"/>
+            <asp:TextBox CssClass="input" runat="server" ID="inputKey" ClientIDMode="Static"/>
             <asp:Label CssClass="text_desc" AssociatedControlID="inputKey" runat="server" ID="description" />
         </div>
         <button runat="server" id="btnSearch" class="btn btn-success"><i class="fa fa-search"></i>Tìm kiếm</button>
         <button type="button" class="btn btn-primary" onclick="showModal('update')"><i class="fa fa-pencil"></i>Cập nhật</button>
-        <button runat="server" type="button" id="btnDelete" class="btn btn-primary"><i class="fa fa-trash"></i>Xóa</button>
+        <button type="button" id="btnDelete" class="btn btn-primary" onclick="deleteData(event)"><i class="fa fa-trash"></i>Xóa</button>
     </div>
     <div class="adminPage_content-table">
         <div class="table_wrapper">
@@ -37,7 +37,6 @@
             <button type="button" class="btn btn_icon" onclick="closeModal()"><i class="fa fa-close"></i></button>
         </div>
         <div class="modal_content-body" id="modal_body">
-            
         </div>
         <div class="modal_content-footer">
             <button type="button" class="btn btn-primary" id="btn_modal-submit"></button>
@@ -46,78 +45,8 @@
     </div>
 </div>
 <script src="assets/js/request.js" type="text/javascript"></script>
+<script src="../../assets/js/adminConfig.js" type="text/javascript"></script>
 <script>
-    const config = {
-        movie: {
-            fields: [
-                {
-                    label: "Tên phim",
-                    required: true,
-                    field: "sTenPhim",
-                    type: "text"
-                },
-                {
-                    label: "Thể loại",
-                    required: true,
-                    field: "FK_iTheLoaiID",
-                    type: "number",
-                    widget: "select",
-                    getOptions: {
-                        url: "/Admin.aspx/getCategory",
-                        save: "PK_iTheLoaiID",
-                        view: "sTenTheLoai",
-                        method: "GET"
-                    }
-                },
-                {
-                    label: "Ngày chiếu",
-                    required: true,
-                    field: "dNgayChieu",
-                    type: "date",
-                },
-                {
-                    label: "Giá",
-                    required: true,
-                    field: "fGia",
-                    type: "number"
-                },
-                {
-                    label: "Nội dung",
-                    required: true,
-                    field: "sNoiDung",
-                    type: "text",
-                    widget: "textarea"
-                },
-                {
-                    label: "Thời lượng",
-                    required: true,
-                    field: "iThoiLuong",
-                    type: "number"
-                },
-                {
-                    label: "Ảnh",
-                    required: true,
-                    field: "sAnh",
-                    type: "file",
-                    accept: "image/*"
-                },
-                {
-                    label: "Ảnh quảng cáo",
-                    required: true,
-                    field: "sAnhQuangCao",
-                    type: "file",
-                    accept: "image/*"
-                },
-                {
-                    label: "Trailer",
-                    required: true,
-                    field: "sTrailer",
-                    type: "file",
-                    accept: "video/*"
-                },
-            ]
-        }
-    }
     function getPage() {
         const params = window.location.search;
         const paramsObject = new URLSearchParams(params);
@@ -125,7 +54,7 @@
         return page;
     }
 
-    async function closeModal() {
+    function closeModal() {
         const modal = document.getElementById("adminContent_modal");
         modal.classList.remove("show");
     }
@@ -142,16 +71,38 @@
             title.innerText = "Cập nhật";
             buttonSubmit.innerHTML = `<i class="fa fa-pencil"></i>Cập nhật`;
         }
+        buttonSubmit.onclick = (event) => clickSubmitForm(action,event);
     }
 
     async function showModal(action) {
         let page = getPage();
         if (!page) return;
-        const configPage = config[page];
+        const configPage = adminConfig[page];
         if (!configPage) return;
+        let data = {};
+        if (action == "update") {
+            let inputId = document.getElementById("inputKey");
+            if (!inputId?.value) {
+                alert("vui lòng nhập mã!");
+                return;
+            } else {
+                let rs = await getDataByUrl(configPage.url + "?id=" + inputId.value) || [];
+                data = rs[0];
+                if (!data) {
+                    alert("Không tìm thấy sản phẩm!");
+                    return;
+                }
+            }
+        }
         setTitleAndButtonModal(action);
         const fields = configPage.fields || [];
+        await createItem(fields, data);
+    }
+
+    async function createItem(fields, data = {}) {
         const bodyModal = document.getElementById("modal_body");
+        const formModal = document.createElement("form");
+        formModal.id = "modal_form"
         bodyModal.innerHTML = "";
         for (let field of fields) {
             const div = document.createElement('div');
@@ -160,25 +111,35 @@
             label.htmlFor = field.field;
             label.className = "item_form-label"
             label.innerText = field.label + (field.required ? ": *" : ":");
+            field.value = data[field.field] || "";
             div.appendChild(label);
             const element = await createWidgetElement(field);
             div.appendChild(element);
-            bodyModal.appendChild(div);
+            formModal.appendChild(div);
         }
+        bodyModal.appendChild(formModal)
     }
 
     async function createWidgetElement(config) {
         let widget = config.widget || "";
-        let element = "";
+        let element = document.createElement("input");
+        element.value = config.value;
         switch (widget) {
             case "select":
                 element = document.createElement("select");
+                element.name = config.field;
                 element.id = config.field;
                 element.className = "item_form-item"
+                const optionDefault = document.createElement("option");
+                optionDefault.value = "";
+                optionDefault.innerText = "Choose option";
+                if (!config.value) optionDefault.selected = true;
+                element.appendChild(optionDefault);
                 if (config.options && config.options.length > 0) {
                     for (let { label, value } of config.options) {
                         if (!label || !value) continue;
                         const option = document.createElement("option");
+                        option.selected = value == config.value || false;
                         option.value = value;
                         option.innerText = label;
                         element.appendChild(option);
@@ -188,10 +149,11 @@
                     let options = []
                     if (result.status === 200) {
                         options = result.data || [];
-                    }
+                     }
                     for (let option of options) {
                         const opt = document.createElement("option");
                         opt.value = option[config.getOptions.save];
+                        opt.selected = opt.value == config.value || false;
                         opt.innerText = option[config.getOptions.view];
                         element.appendChild(opt);
                     }
@@ -199,20 +161,98 @@
                 break;
             case "textarea":
                 element = document.createElement("textarea");
+                element.style = config.style;
+                element.value = config.value;
                 element.id = config.field;
+                element.name = config.field;
                 element.className = "item_form-item"
                 break;
             default:
-                element = document.createElement("input");
-                element.name = config.field;
-                element.type = config.type;
-                element.accept = config.accept || "";
-                element.required = config.required || false;
-                element.id = config.field;
-                element.className = "item_form-item"
+                if (config.type == "file") {
+                    element = createInputFile(config);
+                } else {
+                    element.name = config.field;
+                    element.type = config.type;
+                    element.required = config.required || false;
+                    element.id = config.field;
+                    element.className = "item_form-item"
+                }
                 break;
         }
         return element;
+    }
+
+    async function getDataByUrl(url, body, method = "GET") {
+        const result = await request(url, body, method);
+        if (!result) return null;
+        if (result.status === 200) {
+            return result.data;
+        } else {
+            return null;
+        }
+    }
+
+    async function clickSubmitForm(action, event) {
+        let page = getPage();
+        if (!page) return;
+        const configPage = adminConfig[page];
+        if (!configPage || !configPage.fields) return;
+        const { fields } = configPage;
+        const form = document.getElementById("modal_form");
+        const formData = new FormData(form);
+        for (let field of fields) {
+            if (field.required && !formData.get(field.field)) {
+                alert(field.label + " is required!");
+                return;
+            }
+            if (field.type.includes("date")) {
+                let value = new Date(formData.get(field.field)).toISOString();
+                formData.set(field.field, value);
+            }
+        }
+        if (action === "update") {
+            let inputId = document.getElementById("inputKey");
+            if (!inputId?.value) {
+                alert("Lỗi vui lòng thử lại!");
+                closeModal();
+                return;
+            }
+            formData.set("id", inputId.value);
+        } 
+        event.target.setAttribute("disabled", "true");
+        const url = configPage.urlAction + `/handleForm?action=${action}&page=${page}`;
+        let result = await request(url, formData);
+        event.target.removeAttribute("disabled");
+        if (result.status == 200) {
+            closeModal();
+            location.reload();
+        } else {
+            alert("Submit failed!");
+        }
+    }
+
+    async function deleteData(event) {
+        let page = getPage();
+        if (!page) return;
+        const configPage = adminConfig[page];
+        if (!configPage || !configPage.urlAction) return;
+        let inputId = document.getElementById("inputKey");
+        if (!inputId?.value) {
+            alert("Vui lòng nhập mã!");
+            return;
+        }
+        if (!confirm("Bạn có chắc muốn xóa!")) {
+            return;
+        }
+        event.target.setAttribute("disabled", "true");
+        const url = configPage.urlAction + `/deleteData?ID=${inputId.value}&page=${page}`;
+        let result = await request(url, null, "GET");
+        event.target.removeAttribute("disabled");
+        if (result.status == 200) {
+            location.reload();
+        } else {
+            alert("Xóa thất bại!");
+        }
     }
 
 </script>
