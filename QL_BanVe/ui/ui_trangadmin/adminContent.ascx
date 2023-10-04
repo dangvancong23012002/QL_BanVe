@@ -22,9 +22,9 @@
             </table>
         </div>
         <div class="table_footer">
-            <button runat="server" type="button" id="prevPage" class="btn"><i class="fa fa-chevron-left"></i>Trang trước</button>
+            <button runat="server" type="button" id="prevPage" class="btn" onserverclick="prevPage_ServerClick"><i class="fa fa-chevron-left"></i>Trang trước</button>
             <asp:Literal runat="server" ID="pageControl">Page 1 of 1</asp:Literal>
-            <button runat="server" type="button" id="nextPage" class="btn"><i class="fa fa-chevron-right"></i>Trang sau</button>
+            <button runat="server" type="button" id="nextPage" class="btn" onserverclick="nextPage_ServerClick"><i class="fa fa-chevron-right"></i>Trang sau</button>
         </div>
     </div>
 </div>

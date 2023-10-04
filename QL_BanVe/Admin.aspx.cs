@@ -90,6 +90,14 @@ namespace QL_BanVe
                             Response.Write(JsonConvert.SerializeObject(dt));
                         }
                         break;
+                    case "/getUser":
+                        if (!String.IsNullOrEmpty(ID))
+                        {
+                            dt = TaiKhoan.thongTinUserByKey(ID);
+                            
+                            Response.Write(JsonConvert.SerializeObject(dt));
+                        }
+                        break;
                     case "/handleForm":
                         handleFormData();
                         break;
@@ -142,6 +150,7 @@ namespace QL_BanVe
                         status = DoAn.deleteProduct(Convert.ToInt32(ID));
                         break;
                     case "users":
+                        status = TaiKhoan.deleteUser(ID);
                         break;
                     default:
                         break;
@@ -233,6 +242,14 @@ namespace QL_BanVe
                         }
                         break;
                     case "users":
+                        if (action == "create")
+                        {
+                            status = TaiKhoan.insertUser(data);
+                        }
+                        else
+                        {
+                            status = TaiKhoan.updateUser(data);
+                        }
                         break;
                     default:
                         Response.StatusCode = 500;

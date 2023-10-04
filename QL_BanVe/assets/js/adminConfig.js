@@ -143,6 +143,12 @@
                 type: "text"
             },
             {
+                label: "Mật khẩu",
+                required: true,
+                field: "sMatKhau",
+                type: "password"
+            },
+            {
                 label: "Số điện thoại",
                 required: true,
                 field: "sSoDienThoai",
@@ -156,12 +162,8 @@
                 widget: "select",
                 options: [
                     {
-                        label: "Staff",
-                        value: "staff"
-                    },
-                    {
-                        label: "Teamlead",
-                        value: "teamlead"
+                        label: "User",
+                        value: "user"
                     },
                     {
                         label: "Admin",

@@ -16,8 +16,8 @@ namespace QL_BanVe.UI.UI_TrangAdmin
     public partial class adminContent : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-                Init_Page();
+        {  
+            Init_Page();
         }
 
         protected void Init_Page()
@@ -55,14 +55,20 @@ namespace QL_BanVe.UI.UI_TrangAdmin
                             break;
                         case "users":
                             title = "Quản lý tài khoản";
-                            placeholder = "Mã tài khoản hoặc tên tài khoản";
+                            placeholder = "Tên đăng nhập hoặc họ tên";
+                            label = "Tên đăng nhập để sửa và xóa, họ tên để search";
                             break;
                         default: break;
                     }
                     adminPage_title.Text = title;
                     inputKey.Attributes["placeholder"] = placeholder;
                     description.Text = label;
-                    GetDataByPage(page, 0, search, 10, 0);
+                    int skip = Convert.ToInt32(Session[page]);
+                    if (skip == 0)
+                    {
+                        Session.Add(page, 0);
+                    }
+                    GetDataByPage(page, 0, search, 10, Convert.ToInt32(skip));
                 }
             } catch (Exception ex)
             {
@@ -96,6 +102,7 @@ namespace QL_BanVe.UI.UI_TrangAdmin
                             dt = DoAn.adminPageGetProduct(ID, search, limit, skip);
                             break;
                         case "users":
+                            dt = TaiKhoan.adminPageGetUsers("", search, limit, skip);
                             break;
                         default: break;
                     }
@@ -158,31 +165,55 @@ namespace QL_BanVe.UI.UI_TrangAdmin
                 table_header.InnerHtml = header;
                 table_body.InnerHtml = body;
                 double totalPage = Math.Ceiling((double)total / (double)pageSize);
-                if (totalPage < 0)
+                if (totalPage <= 0)
                 {
                     totalPage = 1;
                 }
                 pageControl.Text = "Page " + (currentPage + 1) + " out of " + totalPage;
-                
-                if (currentPage > 0 && currentPage < (totalPage - 1))
+                currentPage += 1;
+                if (currentPage > 1 && currentPage < totalPage)
                 {
-                    prevPage.Attributes["disabled"] = "false";
-                    nextPage.Attributes["disabled"] = "false";
-                } else if ((totalPage - 1) == 0)
+                    prevPage.Disabled = false;
+                    nextPage.Disabled = false;
+                } else if (totalPage == 1)
                 {
-                    prevPage.Attributes["disabled"] = "true";
-                    nextPage.Attributes["disabled"] = "true";
-                } else if (currentPage == 0)
+                    prevPage.Disabled = true;
+                    nextPage.Disabled = true;
+                } else if (currentPage == 1)
                 {
-                    prevPage.Attributes["disabled"] = "true";
-                } else
+                    prevPage.Disabled = true;
+                    nextPage.Disabled = false;
+                } else if (currentPage == totalPage)
                 {
-                    nextPage.Attributes["disabled"] = "true";
+                    prevPage.Disabled = false;
+                    nextPage.Disabled = true;
                 }
             } catch (Exception ex)
             {
 
             }
+        }
+
+        protected void prevPage_ServerClick(object sender, EventArgs e)
+        {
+            string page = Attributes["content"];
+            int skip = Convert.ToInt32(Session[page]);
+            if (skip == 0)
+            {
+                return;
+            }
+            skip -= 1;
+            Session[page] = skip;
+            this.Page_Load(sender, e);
+        }
+
+        protected void nextPage_ServerClick(object sender, EventArgs e)
+        {
+            string page = Attributes["content"];
+            int skip = Convert.ToInt32(Session[page]);
+            skip += 1;
+            Session[page] = skip;
+            this.Page_Load(sender, e);
         }
     }
 }
