@@ -1,0 +1,463 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    --siderbar-width: 250px;
+    --logo_height: 20%;
+    --hover-color: #ff4a4a;
+    --text-hover: white;
+    --color-success: #1dbc72;
+    --color-danger: #dc3545;
+    --color-primary: #ff4a4a;
+    --btnColor-hover: rgba(203, 203, 203, 0.5);
+    --text-desc: #888;
+}
+
+/*--------------------------------------------------- CUSTOMER WIDGET ------------------------------------------------------------/*/
+
+.wrapper_input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.text_desc {
+    font-size: 14px;
+    color: var(--text-desc);
+}
+
+.btn {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.btn * {
+    pointer-events: none;
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+    color: var(--text-hover);
+}
+
+.btn.btn_icon {
+    background-color: transparent;
+    border-radius: 99px;
+    outline: none;
+    padding: 5px;
+    font-size: 20px;
+    min-width: 35px;
+    min-height: 35px;
+    justify-content: center;
+    border: none;
+}
+
+.btn.btn_icon.outline {
+    border: 1px solid black;
+}
+
+.btn.btn_icon:hover {
+    color: black;
+    background-color: var(--btnColor-hover);
+}
+
+.btn.btn-success {
+    background-color: var(--color-success);
+    color: white;
+    border-color: var(--color-success);
+}
+
+.btn.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.btn.btn-success:hover, .btn.btn-primary:hover {
+    background-color: var(--btnColor-hover);
+    color: var(--text-hover);
+}
+
+.btn:disabled, .btn:disabled:hover {
+    background-color: var(--btnColor-hover);
+    cursor: default;
+    color: var(--text-hover);
+}
+
+/*--------------------------------------------------- CUSTOMER WIDGET END ------------------------------------------------------------/*/
+
+.empty_page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.adminPage_wrapper {
+    width: 100%;
+    height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/*--------------------------------------------------- ADMIN SIDERBAR ------------------------------------------------------------/*/
+
+.adminPage_siderBar-wrapper {
+    width: var(--siderbar-width);
+    height: 100%;
+    position: relative;
+    min-height: 100vh;
+}
+
+.adminPage_siderBar {
+    width: var(--siderbar-width);
+    height: 100vh;
+    overflow: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white;
+    border: 1px solid;
+    transition: all 0.2s linear;
+}
+
+.collapsed {
+    --siderbar-width: 100px;
+    --logo_height: 10%;
+}
+
+.adminPage_logo {
+    width: 100%;
+    height: var(--logo_height);
+    padding: 10px 20px;
+    overflow: hidden;
+    display: block;
+    transition: all 0.2s linear;
+}
+
+.adminPage_logo-img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.adminPage_siderBar-menu {
+    width: 100%;
+    height: calc(100% - (var(--logo_height) + 5%));
+    overflow: auto;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-width: 1px 0;
+    border-style: solid;
+}
+
+.adminPage_siderBar-menuItem a {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 10px -10px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    color: black;
+    text-decoration: none;
+}
+
+.adminPage_siderBar-menuItem i, .adminPage_siderBar-menuItem span {
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.collapsed .adminPage_siderBar-menuItem a {
+    justify-content: center;
+}
+
+.collapsed .adminPage_siderBar-menuItem span {
+    display: none;
+}
+
+.adminPage_siderBar-menuItem:hover a, .adminPage_siderBar-menuItem.active a, .adminPage_siderBar-collapse:hover {
+    background-color: var(--hover-color);
+    color: var(--text-hover);
+}
+
+.adminPage_siderBar-collapse {
+    text-align: center;
+    width: 100%;
+    height: 5%;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.adminPage_siderBar-collapse i {
+    pointer-events: none;
+}
+
+/*--------------------------------------------------- ADMIN CONTENT ------------------------------------------------------------/*/
+
+#adminPage_content {
+    width: calc(100% - var(--siderbar-width));
+    transition: all 0.2s linear;
+}
+
+.adminPage_content-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.adminPage_content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.adminPage_content-header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.adminPage_content-control {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.adminPage_content-table {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.table_wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#table_view {
+    width: 100%;
+    border-spacing: 0px;
+}
+
+#table_view tr td {
+    min-width: 100px;
+    max-width: 500px;
+    min-height: 100px;
+    max-height: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#table_view tr td img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.table_view-header {
+    background: var(--color-primary);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.table_view-header tr td {
+    font-weight: bold;
+    text-align: center;
+}
+
+.table_view-body tr:nth-of-type(2n) {
+    background: hsl(0 0% 0% / 0.1);
+}
+
+
+.table_view-body tr td span {
+    display: -webkit-box;
+    max-width: 100%;
+    width: max-content;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+.table_footer {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+/*--------------------------------------------------- ADMIN CONTENT MODAL ------------------------------------------------------------/*/
+
+.adminPage_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.adminPage_modal.show {
+    display: flex;
+}
+
+.modal_overLay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--btnColor-hover);
+    z-index: 99;
+}
+
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    min-width: 500px;
+    max-width: 100vw;
+    min-height: max-content;
+    max-height: 100vh;
+    background-color: white;
+    z-index: 100;
+    overflow: auto;
+}
+
+.modal_content-header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.modal_content-header h1 {
+    margin: 0;
+}
+
+.modal_content-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    gap: 10px;
+}
+
+#modal_form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item_form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.item_form label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.item_form .item_form-item {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.modal_content-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+/*--------------------------------------------------- CUSTOM INPUT FILE ------------------------------------------------------------/*/
+
+.item_wrapper-inputFile {
+    display: flex;
+    gap: 5px;
+}
+
+.btn_input-file {
+    width: max-content;
+    padding: 10px 20px;
+    background-color: #51ca61;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.item_input-file {
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: var(--btnColor-hover);
+    border: 1px solid;
+    padding: 0 10px;
+    max-width: 100%;
+}
+
+.item_input-file.show {
+    display: flex;
+}
+
+.item_input-name {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
