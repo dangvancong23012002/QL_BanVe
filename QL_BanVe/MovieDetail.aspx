@@ -17,7 +17,7 @@
             <header class="header">
                 <nav class="nav container">
                     <div class="nav__data">
-                        <a href="#" class="nav__logo">Betas Cinemas
+                        <a href="#" class="nav__logo">Betas Cinemas 
                         </a>
                         <div class="nav__toggle" id="nav-toggle">
                             <i class="uil uil-bars nav__burger"></i>
