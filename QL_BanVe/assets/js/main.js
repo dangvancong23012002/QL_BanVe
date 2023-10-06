@@ -37,7 +37,7 @@ function loadVehim() {
     }
     xhr.send(formData);
 }
-loadVehim();
+// loadVehim();
 
 function timPhim() {
     document.querySelector(".nav__search input").addEventListener('keyup', () => {
