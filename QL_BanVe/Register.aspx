@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="assets/css/register.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/css/login_register.css" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet' />
     <link href="assets/css/grid.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
@@ -14,71 +15,76 @@
     <form id="form1" runat="server" method="post">
         <%-- header --%>
         <div class="grid wide">
-
             <header class="header">
                 <div class=" header_text__logo ">
                     <a href="Default.aspx" class=" header_logo-link ">Betas Cinemas</a>
                 </div>
-                <h2>Đăng Kí</h2>
             </header>
         </div>
         <%--  --%>
-        <div class="containner">
-            <div class="home-wrap">
-                <div class="home-tiltle">
-                    <h2>Đăng Kí</h2>
+        <div class="containner container__signup">
+            <div class="sign-up-center">
+                <div class="home-wrap">
+                    <div class="home-tiltle">
+                        <h2>Đăng Kí</h2>
+                    </div>
+                    <div class="form">
+                        <div class="sign-up-username">
+                            <div class="form__input">
+                                <label for="input-username">
+                                    <i class='bx bxs-user'></i>
+                                </label>
+                                <input type="text" name="input-username" id="input-username" placeholder="Username*" />
+                            </div>
+                            <p class="message username-message"></p>
+                        </div>
+                        <div class="sign-up-email">
+                            <div class="form__input">
+                                <label for="input-email">
+                                    <i class='bx bxs-envelope'></i>
+                                </label>
+                                <input type="text" name="input-email" id="input-email" placeholder=" Your Email*" />
+                            </div>
+                            <p class="message email-message"></p>
+                        </div>
+                        <div class="sign-up-password">
+                            <div class="form__input">
+                                <label for="input-password">
+                                    <i class='bx bxs-lock'></i>
+                                </label>
+                                <input type="password" name="input-password" id="input-password" placeholder="Password*" autocomplete="off" />
+                            </div>
+                            <p class="message password-message"></p>
+                        </div>
+                        <div class="sign-up-repassword">
+                            <div class="form__input">
+                                <label for="input-repassword">
+                                    <i class='bx bx-lock'></i>
+                                </label>
+                                <input type="password" name="input-repassword" id="input-repassword"
+                                    placeholder="Repeat Password*" autocomplete="off" />
+                            </div>
+                            <p class="message repassword-message"></p>
+                        </div>
+                        <div class="show-password">
+                            <label for="show-psw-btn">
+                                <i class='bx bxs-bullseye'></i>
+                            </label>
+                            <button type="button" id="show-psw-btn">Hiển thị password</button>
+                        </div>
+                        <div id="success" runat="server"></div>
+                        <div class="sign-up-submit">
+                            <p class="sign-up-status"></p>
+                            <button type="submit" class="submit-button">Đăng Kí</button>
+                        </div>
+                        <div class="form-footer">
+                            <span>Bạn đã có tài khoản?</span>
+                            <p><a href="Login.aspx">Đăng Nhập</a></p>
+                        </div>
+                        <span id="notice" class="regis__notice" runat="server"></span>
+                    </div>
                 </div>
-                <div class="form">
-                    <div class="sign-up-username">
-                        <label for="input-username">
-                            <i class='bx bxs-user'></i>
-                        </label>
-                        <input type="text" name="input-username" id="input-username" placeholder="Username*" />
-                        <p class="message username-message"></p>
-                    </div>
-                    <div class="sign-up-email">
-                        <label for="input-email">
-                            <i class='bx bxs-envelope'></i>
-                        </label>
-                        <input type="text" name="input-email" id="input-email" placeholder=" Your Email*" />
-                        <p class="message email-message"></p>
-                    </div>
-                    <div class="sign-up-password">
-                        <label for="input-password">
-                            <i class='bx bxs-lock'></i>
-                        </label>
-                        <input type="password" name="input-password" id="input-password" placeholder="Password*" autocomplete="off" />
-                        <p class="message password-message"></p>
-                    </div>
-                    <div class="sign-up-repassword">
-                        <label for="input-repassword">
-
-                            <i class='bx bx-lock'></i>
-                        </label>
-                        <input type="password" name="input-repassword" id="input-repassword"
-                            placeholder="Repeat Password*" autocomplete="off" />
-                        <p class="message repassword-message"></p>
-                    </div>
-                    <div class="show-password">
-                        <label for="show-psw-btn">
-                            <i class='bx bxs-bullseye'></i>
-                        </label>
-                        <button type="button" id="show-psw-btn">Hiển thị password</button>
-                    </div>
-                    <div id="success" runat="server"></div>
-                    <div class="sign-up-submit">
-                        <p class="sign-up-status"></p>
-                        <button type="submit" class="submit-button">Đăng Kí</button>
-                    </div>
-                    <div class="form-footer">
-                        <span>Bạn đã có tài khoản?</span>
-                        <p><a href="Login.aspx">Đăng Nhập</a></p>
-                    </div>
-                    <span id="notice" class="regis__notice" runat="server"></span>
-                </div>
-
-
-            </div>
+            </div>           
         </div>
         <%-- footer --%>
         <footer class="footer ">

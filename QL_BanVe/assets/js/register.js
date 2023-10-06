@@ -81,7 +81,6 @@ const emailValidate = () => {
         showErrorStyles(emailContainer, emailInputBox);
         emailMessage.innerHTML = "Hãy điền email";
     }
-    /*
     else if (check() === -1) {
         showErrorStyles(emailContainer, emailInputBox);
         emailMessage.innerHTML = `Email phải chứa '@' và '.'`;
@@ -106,7 +105,7 @@ const emailValidate = () => {
         showErrorStyles(emailContainer, emailInputBox);
         emailMessage.innerHTML = `Phải có ít nhất 2 kí tự giữa '@' và '.'`;
     }
-    */
+    
     else {
         removeErrorStyles(emailContainer, emailInputBox);
         emailMessage.innerHTML = "";
@@ -123,12 +122,10 @@ const passwordValidate = () => {
         showErrorStyles(passwordContainer, passwordInputBox);
         passwordMessage.innerHTML = "Hãy điền mật khẩu";
     }
-    /*
     else if (password.length <= 5) {
         showErrorStyles(passwordContainer, passwordInputBox);
         passwordMessage.innerHTML = "Mật khẩu phải lớn hơn 5 ký tự";
     }
-    */
     else {
         removeErrorStyles(passwordContainer, passwordInputBox);
         passwordMessage.innerHTML = "";

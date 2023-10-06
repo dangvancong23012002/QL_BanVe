@@ -19,8 +19,14 @@ namespace QL_BanVe
                 string username = Request.Form["input-username"];
                 string fullname = Request.Form["input-email"];
                 string password = Request.Form["input-password"];
-                TaiKhoan.insertTaiKhoan(username, Functions.encrypt(password), fullname, "123456789", "user");
-                notice.InnerText = "Chúc mừng bạn đã tạo tài khoản " + username + " thành công!";
+                if (Functions.checkKey("select * from tblTaiKhoan where PK_sTenDangNhap = '" + username + "'"))
+                {
+                    notice.InnerText = "Tên đăng nhập " + username + " đã tồn tại!";
+                } else
+                {
+                    TaiKhoan.insertTaiKhoan(username, Functions.encrypt(password), fullname, "123456789", "user");
+                    notice.InnerText = "Chúc mừng bạn đã tạo tài khoản " + username + " thành công!";
+                }
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿/* trang chu */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600&family=Nunito+Sans:wght@300&family=Nunito:wght@300&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,100;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 :root {
     --primary-text: #252A2B;
@@ -27,10 +28,11 @@
 }
 
 body {
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Cairo', sans-serif;
     font-family: 'Nunito', sans-serif;
     font-family: 'Nunito Sans', sans-serif;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;*/
 }
 
 input, button {
@@ -67,7 +69,8 @@ a.header_logo-link {
     color: var(--red-color);
 }
 
-.login__notice {
+.login__notice,
+.regis__notice {
     color: red;
 }
 /*  */
@@ -77,9 +80,17 @@ a.header_logo-link {
     background-repeat: no-repeat;
     background-position: center center;
     position: relative;
-    height: 600px;
+    /*height: 600px;*/
     object-fit: cover;
     margin-bottom: 30px;
+}
+
+.container__signin {
+    height: 600px;
+}
+
+.container__signup {
+    height: 700px;
 }
 
     .containner::before {
@@ -183,7 +194,8 @@ button#show-psw-btn {
     transition: border .4s;
 }
 
-.sing-in-center {
+.sign-in-center,
+.sign-up-center {
     display: flex;
     justify-content: center;
 }
@@ -250,7 +262,7 @@ button#show-psw-btn {
     .form-footer > p > a {
         color: #000;
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
         margin-left: 3px;
     }
 
@@ -269,6 +281,7 @@ footer {
     font-size: 24px;
     font-weight: 400;
     margin-bottom: 10px;
+    color: var(--red-color);
 }
 
 .footer-content-text {
@@ -340,11 +353,15 @@ footer {
 
 /* mobile */
 @media (max-width :739px) {
-    .sign-in-username label {
+    .sign-in-username label,
+    .sign-in-password label {
         display: none;
     }
 
-    .sign-in-password label {
+    .sign-up-username label,
+    .sign-up-password label,
+    .sign-up-email label,
+    .sign-up-repassword label {
         display: none;
     }
 

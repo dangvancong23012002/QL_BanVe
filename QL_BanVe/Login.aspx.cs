@@ -28,11 +28,17 @@ namespace QL_BanVe
                     // Đăng nhập thành công -> lưu giá trị vào session
                     Session["DangNhap"] = "1";
                     Session["TenDangNhap"] = table.Rows[0]["sHoTen"];
-                    Response.Redirect("Default.aspx");
+                    if (table.Rows[0]["sVaiTro"].ToString() == "admin")
+                    {
+                        Response.Redirect("Admin.aspx");
+                    } else
+                    {
+                        Response.Redirect("Default.aspx");
+                    }
                 }
                 else
                 {
-                    notice.InnerHtml = "<div class='msg'>Tên đăng nhập hoặc mật khẩu không chính xác</div>";
+                    notice.InnerText = "Tên đăng nhập hoặc mật khẩu không chính xác!";
                 }
                 //Check rỗng, ..
                 bool ck = true;

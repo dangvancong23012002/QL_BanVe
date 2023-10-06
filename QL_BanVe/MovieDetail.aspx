@@ -13,7 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="app">
             <header class="header">
                 <nav class="nav container">
                     <div class="nav__data">
@@ -32,7 +32,7 @@
                             </div>
                             <ul class="nav__list">
                                 <li><a href="#" class="nav__link">Thể loại</a></li>
-                                <li><a href="#" class="nav__link">Tất cả</a></li>
+                                <li><a href="#" class="nav__link">Lịch sử</a></li>
                                 <li><div class="dropdown__item">
                                     <div class="nav__link">
                                         Tài khoản<i class="uil uil-angle-down dropdown__arrow"></i>
@@ -179,9 +179,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="detail__buy">
-                            <button class="detail__buy-btn">Đặt vé</button>
-                        </div>
+                    </div>
+                    <div class="detail__buy">
+                        <button class="detail__buy-btn">Đặt vé</button>
                     </div>
                 </div>
             </main>
@@ -201,72 +201,90 @@
                     <button>Đồng ý</button>
                 </div>
             </div>
+            <%-- footer --%>
             <footer class="footer ">
                 <div class="footer-container ">
                     <div class="grid wide ">
                         <div class="footer-wrap row ">
-                            <div class="footer-content col l-4 m-12 c-12 ">
-                                <h2 class="footer-content-header ">Giới thiệu</h2>
-                                <p class="footer-content-text ">
-                                    Movies Online trang mua sắm trực tuyến của thương hiệu thời trang Lama, thời trang nam, nữ, phụ kiện, giúp bạn tiếp cận xu hướng thời trang mới nhất.
-                                </p>
+                            <div class="footer-padd l-4 m-12 c-12 ">
+                                <div class="row">
+                                    <div class="footer-padd c-12">
+                                        <h2 class="footer-content-header ">Giới thiệu</h2>
+                                        <p class="footer-content-text ">
+                                            Betas Cinemas trang mua vé trực tuyến của thương hiệu thời Cinemas, vé chiếu theo khung giờ, vé chiếu theo lượt xem, phụ kiện, giúp bạn tiếp cận xu hướng thời trang mới nhất.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col l-8 m-12 c-12 ">
+
+                            <div class="footer-padd l-8 m-12 c-12 ">
                                 <div class="row ">
-                                    <div class="footer-content col l-4 m-12 c-12 ">
+                                    <div class="footer-content footer-padd l-4 m-12 c-12 ">
                                         <h2 class="footer-content-header ">Thông tin liên hệ</h2>
                                         <div class=" footer-contact ">
                                             <ul>
-                                                <li class="contact-1"><i class='bx bxs-map'></i>Tầng 4, tòa nhà Flemington, số 182, đường Lê Đại Hành, phường 15, quận 11, Tp. Hồ Chí Minh.</li>
-                                                <li class="contact-2"><i class='bx bxs-phone-call'></i>1900.636.099</li>
-                                                <li class="contact-4"><i class='bx bxl-gmail'></i>hi@haravan.com</li>
+                                                <li class="contact-1 "><i class='bx bxs-map'></i>Tầng 4, tòa nhà Flemington, số 182, đường Lê Đại Hành, phường 15, quận 11, Tp. Hồ Chí Minh.</li>
+                                                <li class="contact-2 "><i class='bx bxs-phone-call'></i>1900.636.099</li>
+                                                <li class="contact-4 "><i class='bx bxl-gmail'></i>hi@haravan.com</li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="footer-content col l-4 m-12 c-12 ">
+                                    <div class="footer-content footer-padd l-4 m-12 c-12 ">
                                         <h2 class="footer-content-header ">Liên kết</h2>
                                         <div class=" toggle-footer ">
                                             <ul>
+
                                                 <li class="item ">
-                                                    <a href="productAll.aspx" title="Sản phẩm khuyến mãi ">Sản phẩm khuyến mãi</a>
+                                                    <a href=" " title="Sản phẩm khuyến mãi ">Sản phẩm khuyến mãi</a>
                                                 </li>
+
                                                 <li class="item ">
-                                                    <a href="productAll.aspx" title="Sản phẩm nổi bật ">Sản phẩm nổi bật</a>
+                                                    <a href=" " title="Sản phẩm nổi bật ">Sản phẩm nổi bật</a>
                                                 </li>
+
                                                 <li class="item ">
-                                                    <a href="productAll.aspx" title="Tất cả sản phẩm ">Tất cả sản phẩm</a>
+                                                    <a href=" " title="Tất cả sản phẩm ">Tất cả sản phẩm</a>
                                                 </li>
+
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="footer-content col l-4 m-12 c-12 ">
+                                    <div class="footer-content footer-padd l-4 m-12 c-12 ">
                                         <h2 class="footer-content-header ">Hỗ trợ</h2>
                                         <div class="footer-content toggle-footer ">
                                             <ul>
+
                                                 <li class="item ">
                                                     <a href="/search " title="Tìm kiếm ">Tìm kiếm</a>
                                                 </li>
+
                                                 <li class="item ">
                                                     <a href="/pages/about-us " title="Giới thiệu ">Giới thiệu</a>
                                                 </li>
+
                                                 <li class="item ">
                                                     <a href="/pages/chinh-sach-doi-tra " title="Chính sách đổi trả ">Chính sách đổi trả</a>
                                                 </li>
+
                                                 <li class="item ">
                                                     <a href="/pages/chinh-sach-bao-mat " title="Chính sách bảo mật ">Chính sách bảo mật</a>
                                                 </li>
+
                                                 <li class="item ">
                                                     <a href="/pages/dieu-khoan-dich-vu " title="Điều khoản dịch vụ ">Điều khoản dịch vụ</a>
                                                 </li>
+
                                                 <li class="item ">
                                                     <a href="/pages/lien-he " title="Liên hệ ">Liên hệ</a>
                                                 </li>
+
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </footer>

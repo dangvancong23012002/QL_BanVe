@@ -84,8 +84,7 @@
     <Content Include="assets\css\adminPage.css" />
     <Content Include="assets\css\base.css" />
     <Content Include="assets\css\grid.css" />
-    <Content Include="assets\css\login.css" />
-    <Content Include="assets\css\register.css" />
+    <Content Include="assets\css\login_register.css" />
     <Content Include="assets\css\styles.css" />
     <Content Include="assets\img\cuop_bien_caribe_1.jpg" />
     <Content Include="assets\img\harry_potter_hoang_tu_lai.jpg" />

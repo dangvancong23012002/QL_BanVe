@@ -7,12 +7,14 @@
 }
 
 :root {
+    --primary-text: #252A2B;
     --body-color: hsl(220, 24%, 12%);
     --normal-font-size: .938rem;
     --small-font-size: .813rem;
     --smaller-font-size: .75rem;
     --biggest-font-size: 1.75rem;
     --h2-font-size: 1.25rem;
+    --red-color: #ee4d2d;
 }
 
 a {
@@ -52,6 +54,10 @@ header {
 }
 
 .nav__logo {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--red-color);
     display: inline-flex;
     align-items: center;
     column-gap: 10px;
@@ -451,8 +457,9 @@ header {
     opacity: 1;
     visibility: visible;
 }
-/*Footer*/
+/* footer */
 footer {
+    margin-top: 30px;
     border-top: 3px solid #ccc;
 }
 
@@ -470,20 +477,52 @@ footer {
 
 .footer-content-text {
     font-size: 14px;
-    color: var(--white-color);
+    color: var(--primary-text);
+    text-align: justify;
 }
 
 .footer-contact ul {
     padding: 0;
 }
 
+.footer-padd {
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
 .footer-contact li {
     list-style: none;
     font-size: 14px;
     margin-bottom: 5px;
-    color: var(--white-color);
+    color: var(--primary-text);
 }
 
 .toggle-footer ul {
     padding: 0;
 }
+
+.item {
+    list-style: none;
+}
+
+    .item a {
+        font-size: 14px;
+        color: var(--primary-text);
+        text-decoration: none;
+    }
+
+::-webkit-scrollbar {
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #9f9ca4;
+    border-radius: .5rem;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: hsl(219, 15%, 20%);
+    }
+

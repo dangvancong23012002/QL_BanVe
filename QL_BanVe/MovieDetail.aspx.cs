@@ -29,13 +29,13 @@ namespace QL_BanVe
             string html = "";
             if (table.Rows.Count > 0 )
             {
-                html += $"  <div class='row'>";
-                html += $"      <div class='col l-10'>";
-                html += $"          <div class='row row-pad'>";
-                html += $"              <div class='col l-4'>";
+                html += $"  <div class='row sm-gutter'>";
+                html += $"      <div class='col c-12 l-10'>";
+                html += $"          <div class='row'>";
+                html += $"              <div class='col c-12 l-4'>";
                 html += $"                  <img src = '{table.Rows[0]["sAnh"]}' class='detail__img' />";
                 html += $"              </div>";
-                html += $"              <div class='col l-8'>";
+                html += $"              <div class='col c-12 l-8'>";
                 html += $"                  <div class='detail__content'>";
                 html += $"                      <div class='detail__name-movie'>{table.Rows[0]["sTenPhim"]}</div>";
                 html += $"                      <div class='detail__cost'>Giá vé: {table.Rows[0]["fGia"]} VNĐ</div>";
@@ -50,14 +50,18 @@ namespace QL_BanVe
                 html += $"              </div>";
                 html += $"          </div>";
                 html += $"      </div>";
-                html += $"      <div class='col l-2'></div>";
+                html += $"      <div class='col c-12 l-2'></div>";
                 html += $"  </div>";
-                html += $"  <div class='detail__trailer row-10px'>";
-                html += $"      <div> Trailer</div>";
-                html += $"      <video controls = 'controls'>";
-                html += $"          <source src='{table.Rows[0]["sTrailer"]}' type='video/mp4' />";
-                html += $"      </video>";
-                html += $" </div>";
+                html += $"  <div class='row'>";
+                html += $"      <div class='col c-12 l-12'>";
+                html += $"          <div class='detail__trailer row-10px'>";
+                html += $"              <div> Trailer</div>";
+                html += $"                  <video class='detail__video' controls = 'controls'>";
+                html += $"                      <source src='{table.Rows[0]["sTrailer"]}' type='video/mp4' />";
+                html += $"                  </video>";
+                html += $"              <div>";
+                html += $"      </div>";
+                html += $"  </div>";
                 detail.InnerHtml = html;   
             }
         }

@@ -32,7 +32,7 @@ namespace QL_BanVe.cms.Models
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "sp_InsertTaiKhoan";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@PK_sTenTaiKhoan", tenDN);
+            cmd.Parameters.AddWithValue("@PK_sTenDangNhap", tenDN);
             cmd.Parameters.AddWithValue("@sMatKhau", matKhau);
             cmd.Parameters.AddWithValue("@sHoTen", hoTen);
             cmd.Parameters.AddWithValue("@sDienThoai", dienThoai);

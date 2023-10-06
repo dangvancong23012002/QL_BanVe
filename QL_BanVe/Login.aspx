@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="assets/css/login.css" rel="stylesheet" />
+    <link href="assets/css/login_register.css" rel="stylesheet" />
     <link href="assets/css/grid.css" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet' />
     <title>Đăng nhập</title>
@@ -21,9 +21,9 @@
                 </div>
             </header>
         </div>
-        <div class="containner">
+        <div class="containner container__signin">
             <div class="row">
-                <div class="footer-padd sing-in-center c-12">
+                <div class="footer-padd sign-in-center c-12">
                     <div class="home-wrap sing_in">
                         <div class="home-tiltle">
                             <h2>Đăng Nhập</h2>
