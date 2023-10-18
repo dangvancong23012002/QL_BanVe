@@ -28,6 +28,7 @@ namespace QL_BanVe
                     // Đăng nhập thành công -> lưu giá trị vào session
                     Session["DangNhap"] = "1";
                     Session["TenDangNhap"] = table.Rows[0]["sHoTen"];
+                    Session["Role"] = table.Rows[0]["sVaiTro"].ToString();
                     if (table.Rows[0]["sVaiTro"].ToString() == "admin")
                     {
                         Response.Redirect("Admin.aspx");

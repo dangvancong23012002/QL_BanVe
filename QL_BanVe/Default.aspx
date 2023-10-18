@@ -43,7 +43,7 @@
             <main>
                 <div class="grid wide">
                     <div class="card">
-                        <div class="row sm-gutter list-film" id="list" runat="server">
+                        <div class="row sm-gutter list-film">
                                                   
                         </div>
                     </div>

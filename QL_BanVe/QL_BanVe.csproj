@@ -103,6 +103,7 @@
     <Content Include="assets\js\request.js" />
     <Content Include="assets\video\harry_potter_hoang_tu_lai.mp4" />
     <Content Include="Baihocrutra_Dinh.aspx" />
+    <Content Include="BaiHocRutRa_Thang.txt" />
     <Content Include="cms\Ajax\Phim.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
@@ -140,6 +141,7 @@
     </Compile>
     <Compile Include="cms\Conn\SQLDatabase.cs" />
     <Compile Include="cms\Func\Functions.cs" />
+    <Compile Include="cms\Func\NOIDUNG.cs" />
     <Compile Include="cms\Models\DoAn.cs" />
     <Compile Include="cms\Models\Phim.cs" />
     <Compile Include="cms\Models\Phong.cs" />
