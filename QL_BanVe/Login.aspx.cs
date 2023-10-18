@@ -34,7 +34,7 @@ namespace QL_BanVe
                         Response.Redirect("Admin.aspx");
                     } else
                     {
-                        Response.Redirect("Default.aspx");
+                        Response.Redirect("Home.aspx");
                     }
                 }
                 else

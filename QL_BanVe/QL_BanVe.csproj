@@ -82,13 +82,19 @@
   <ItemGroup>
     <Content Include="Admin.aspx" />
     <Content Include="assets\css\adminPage.css" />
+    <Content Include="assets\css\banner.css" />
     <Content Include="assets\css\base.css" />
+    <Content Include="assets\css\footer.css" />
     <Content Include="assets\css\grid.css" />
+    <Content Include="assets\css\header.css" />
     <Content Include="assets\css\login_register.css" />
+    <Content Include="assets\css\main_content.css" />
+    <Content Include="assets\css\moviedetail.css" />
     <Content Include="assets\css\styles.css" />
     <Content Include="assets\img\cuop_bien_caribe_1.jpg" />
     <Content Include="assets\img\harry_potter_hoang_tu_lai.jpg" />
     <Content Include="assets\img\hoi_ket.jpg" />
+    <Content Include="assets\img\logo-betas.png" />
     <Content Include="assets\js\adminConfig.js" />
     <Content Include="assets\js\detail.js" />
     <Content Include="assets\js\login.js" />
@@ -96,6 +102,7 @@
     <Content Include="assets\js\register.js" />
     <Content Include="assets\js\request.js" />
     <Content Include="assets\video\harry_potter_hoang_tu_lai.mp4" />
+    <Content Include="Baihocrutra_Dinh.aspx" />
     <Content Include="BaiHocRutRa_Thang.txt" />
     <Content Include="cms\Ajax\Phim.aspx" />
     <Content Include="Default.aspx" />
@@ -104,7 +111,11 @@
     <Content Include="Register.aspx" />
     <Content Include="UI\UI_TrangAdmin\adminContent.ascx" />
     <Content Include="UI\UI_TrangAdmin\theSiderBar.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Home.aspx" />
+    <Content Include="MovieDt.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.aspx.cs">
@@ -113,6 +124,13 @@
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Baihocrutra_Dinh.aspx.cs">
+      <DependentUpon>Baihocrutra_Dinh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Baihocrutra_Dinh.aspx.designer.cs">
+      <DependentUpon>Baihocrutra_Dinh.aspx</DependentUpon>
     </Compile>
     <Compile Include="cms\Ajax\Phim.aspx.cs">
       <DependentUpon>Phim.aspx</DependentUpon>
@@ -135,6 +153,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Layout.Master.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layout.Master.designer.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -172,8 +197,23 @@
     <Compile Include="UI\UI_TrangAdmin\theSiderBar.ascx.designer.cs">
       <DependentUpon>theSiderBar.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MovieDt.aspx.cs">
+      <DependentUpon>MovieDt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MovieDt.aspx.designer.cs">
+      <DependentUpon>MovieDt.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Layout.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,0 +1,252 @@
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 730px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 950px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1150px;
+    }
+}
+
+.col-md-3,
+.col-md-4,
+.col-md-6,
+.col-lg-10,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-md-13,
+.col-xs-16,
+.col-sm-16,
+.col-md-16,
+.col-lg-16 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-8,
+.col-xs-16 {
+    float: left;
+}
+
+.col-xs-8 {
+    width: 50%;
+}
+
+@media (min-width: 768px) {
+    .col-sm-8,
+    .col-sm-16 {
+        float: left;
+    }
+
+    .col-sm-16 {
+        width: 100%;
+    }
+
+    .col-sm-8 {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-3,
+    .col-md-4,
+    .col-md-6,
+    .col-md-8,
+    .col-lg-10,
+    .col-md-13,
+    .col-md-16 {
+        float: left;
+    }
+
+    .col-md-16 {
+        width: 100%;
+    }
+
+    .col-md-13 {
+        width: 81.25%;
+    }
+
+    .col-md-8 {
+        width: 50%;
+    }
+
+    .col-md-6 {
+        width: 37.50%;
+    }
+
+    .col-md-10 {
+        width: 62.50%;
+    }
+
+    .col-md-4 {
+        width: 25%;
+    }
+
+    .col-md-3 {
+        width: 18.75%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-16 {
+        float: left;
+    }
+
+    .col-lg-16 {
+        width: 100%;
+    }
+}
+
+li [class*=" fa-"] {
+    display: inline-block;
+    width: 1.25em;
+    text-align: center;
+}
+
+.social-icons {
+    padding: 0;
+    margin: 0;
+}
+
+    .social-icons:before,
+    .social-icons:after {
+        content: " ";
+        display: table;
+    }
+
+    .social-icons:after {
+        clear: both;
+    }
+
+    .social-icons li {
+        float: left;
+        display: inline;
+        list-style: none;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        text-indent: -9999px;
+    }
+
+        .social-icons li > a {
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -ms-border-radius: 2px;
+            -o-border-radius: 2px;
+            border-radius: 2px;
+            width: 28px;
+            height: 28px;
+            display: block;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+        }
+
+        .social-icons li:hover > a {
+            background-position: 0 -38px;
+        }
+
+        .social-icons li .facebook {
+            background: url(https://betacinemas.vn/assets/global/img/social/facebook.png) no-repeat;
+        }
+
+        .social-icons li .youtube {
+            background: url(https://betacinemas.vn/assets/global/img/social/youtube.png) no-repeat;
+        }
+
+        .social-icons li .tiktok {
+            background: url(https://betacinemas.vn/assets/global/img/social/instagram.png) no-repeat;
+        }
+
+        .social-icons li .instagram {
+            background: url(https://betacinemas.vn/assets/global/img/social/instagram.png) no-repeat;
+        }
+
+.pre-footer {
+    border-top: 2px solid #ccc;
+}
+
+    .pre-footer h2 {
+        font-family: Oswald;
+    }
+
+    .pre-footer .container {
+        padding-top: 25px;
+    }
+
+    .pre-footer a {
+        font-size: 14px;
+        color: #000;
+    }
+
+    .pre-footer h2 {
+        font-size: 20px;
+        padding-bottom: 7px;
+        margin: 0 0 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-bottom: 4px solid transparent;
+        border-image: linear-gradient(to right, #102835 0%, #e90036 100%);
+        border-image-slice: 1;
+    }
+
+    .pre-footer p {
+        margin-bottom: 20px;
+    }
+
+    .pre-footer li,
+    h1,
+    h3,
+    h4 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+    }
+
+    .pre-footer li {
+        margin-bottom: 6px;
+    }
+
+.pre-footer-col {
+    padding-bottom: 22px;
+}
+
+.pre-footer .social-icons {
+    padding-top: 5px;
+    float: left;
+}
+
+    .pre-footer .social-icons li a {
+        transition: all 0.1s ease-in-out !important;
+        -o-transition: all 0.1s ease-in-out !important;
+        -ms-transition: all 0.1s ease-in-out !important;
+        -moz-transition: all 0.1s ease-in-out !important;
+        -webkit-transition: all 0.1s ease-in-out !important;
+    }
+
+.pre-footer li a:hover {
+    opacity: 1;
+    color: #b61b07;
+}
+/*! CSS Used from: https://betacinemas.vn/assets/frontend/layout/css/custom.css?v=32 */
+.pre-footer .site-logo {
+    float: initial;
+}

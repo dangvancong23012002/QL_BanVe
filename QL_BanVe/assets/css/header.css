@@ -1,0 +1,97 @@
+
+.header{
+    position: relative;
+    box-shadow: 0 1px 3px #ddd;
+    background-color: #fff;
+    z-index: 999;
+}
+.page-header-fixed .header {
+    position: sticky ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+}
+ .site-logo {
+    float: left;
+    font-size: 23px;
+    font-weight: 400;
+    margin-right: 50px;
+    padding-top: 11px;
+    padding-bottom: 9px;
+    padding-left: 24px;
+  }
+  .header-navigation {
+    font: 15px Oswald, sans-serif;
+    padding-right: 20px;
+    float: left;
+    text-transform: uppercase;
+  }
+  .header-navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .header-navigation > ul > li {
+    float: left;
+  }
+  .header-navigation > ul > li > a {
+    color: #333;
+    display: block;
+    padding: 24px 12px 24px;
+    font-size: large;
+    font-weight: bold;
+  }
+  .header-navigation ul > li > a:hover,
+  .header-navigation ul > li > a:focus {
+    color: #c31700;
+    text-decoration: none;
+  }
+  @media (min-width: 1025px) {
+    .header-navigation > ul > li:hover > .dropdown-menu {
+      display: block;
+    }
+  }
+  .header-navigation,
+  .header-navigation .dropdown {
+    position: static;
+  }
+.input-search{
+    float: left;
+}
+.input-search .search {
+	width: 580px;   
+	height: 40px;
+	padding-left: 15px;
+	margin-left: 15px;
+	margin-top: 20px;
+	border: solid 1px #c9cdce;
+	font-size: 10pt;
+}
+.input-search i{
+    color: #5a5e5f;
+    float: right;
+    position: absolute;
+    font-size: 20px;    
+    margin-top: 30px;
+    margin-left: -30px;
+}
+  
+  /*! CSS Used from: https://betacinemas.vn/assets/frontend/layout/css/themes/blue.css?v=30 */  
+  @media (max-width: 1250px) {
+    .header .header-navigation li > a:hover {
+      color: #b40000 !important;
+    }
+    .input-search .search {
+        width: 400px;
+    }
+  }
+  @media (max-width: 900px) {
+    .site-logo {
+        margin-right: 45px;
+      }
+    .input-search .search {
+        width: 230px;
+    }
+  }
+
