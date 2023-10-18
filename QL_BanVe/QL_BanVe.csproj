@@ -86,6 +86,7 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BaiHocRutRa_Thang.cs" />
     <Compile Include="cms\Conn\SQLDatabase.cs" />
     <Compile Include="cms\Func\Functions.cs" />
     <Compile Include="cms\Models\TheLoai.cs" />
