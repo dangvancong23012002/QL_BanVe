@@ -16,7 +16,14 @@ namespace QL_BanVe
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            object role = Session["Role"];
+            if (role == null)
+            {
+                Response.Redirect("Login.aspx");
+            }else if (role.ToString() != "admin")
+            {
+                Response.Redirect("Default.aspx");
+            }
             string pathInfo = Request.PathInfo;
 
             if (string.IsNullOrEmpty(pathInfo))

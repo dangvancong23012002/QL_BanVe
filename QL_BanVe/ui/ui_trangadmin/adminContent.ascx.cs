@@ -17,7 +17,15 @@ namespace QL_BanVe.UI.UI_TrangAdmin
     {
         protected void Page_Load(object sender, EventArgs e)
         {  
-            Init_Page();
+            string role = Session["Role"].ToString();
+
+            if (role == "admin")
+            {
+                Init_Page();
+            } else
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
 
         protected void Init_Page()
