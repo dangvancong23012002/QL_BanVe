@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="QL_BanVe.Layout" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+	    Betas Cinemas
+    </title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="apple-itunes-app" content="app-id=1403107666" />
+    <meta name="google-play-app" content="app-id=com.beta.betacineplex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="~/assets/css/header.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/banner.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/main_content.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/moviedetail.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body class="corporate page-header-fixed">
+    <!-- BEGIN HEADER -->    
+    <div class="header">
+        <div class="container">
+          <div class="row">
+            <a class="site-logo" href="Home.aspx"><img alt="logo" style="height: 55px;" src="assets/img/logo-betas.png"/></a>            
+            <div class="form-search">
+                <div class="input-search">
+                  <input type="text" class="search" placeholder="Tìm kiếm..." />
+                  <i class="fa fa-search"></i>
+                </div>
+            </div>      
+            <!-- BEGIN -->
+            <div class="header-navigation pull-right font-transform-inherit">
+                <ul class="list-unstyled list-inline pull-right" style="margin-bottom: 4px;margin-top: 4px;" id="load" runat="server">
+                    
+                </ul>
+            </div>
+            <!-- END -->
+          </div>
+        </div>
+    </div>
+    <!-- END HEADER -->
+    <!--BEGIN CONTENT-->
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+     </asp:ContentPlaceHolder>   
+    <!--END CONTENT-->
+    <!-- BEGIN PRE-FOOTER -->
+    <div class="pre-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-16 pre-footer-col" >            
+            <div id="BodyContent_ctl00_bottomPanel" class="ecm-panel">
+              <div style="margin:0px 14px;">
+                <h2>GIỚI THIỆU</h2>
+                <ul class="list-unstyled" style="float: left;">
+                  <li>
+                    Betas Cinemas trang mua vé trực tuyến của thương hiệu thời Cinemas, vé chiếu theo khung giờ, vé chiếu theo lượt xem, phụ kiện, giúp bạn tiếp cận xu hướng thời trang mới nhất.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-sm-16 pre-footer-col">
+            <div id="BodyContent_ctl00_bottomRightPanel" class="ecm-panel">
+              <div class="col-md-8 col-sm-16 pre-footer-col">
+                <h2>THÔNG TIN LIÊN HỆ</h2>
+                <ul class="list-unstyled" style="float: left;">
+                  <li class="contact-1 "><i class='bx bxs-map'></i>Địa chỉ: Tầng 4, tòa nhà Flemington, số 182, đường Lê Đại Hành, phường 15, quận 11, Tp. Hồ Chí Minh.</li>
+                  <li class="contact-2 "><i class='bx bxs-phone-call'></i>Hotline: 1900.636.099</li>
+                  <li class="contact-4 "><i class='bx bxl-gmail'></i>Email: hi@haravan.com</li>
+                </ul>
+              </div>
+              <div class="col-md-4 col-sm-16 pre-footer-col">
+                <h2>KẾT NỐI</h2>
+                <ul class="social-icons">
+                  <li><a class="facebook" data-original-title="facebook" href="https://www.facebook.com/betacinemas/"></a></li>
+                  <li><a class="youtube" data-original-title="youtube" href="https://www.youtube.com/channel/UCGj6uah35-eNiH_2mdubYRw/"></a></li>
+                  <li><a class="tiktok" data-original-title="tiktok" href="https://www.tiktok.com/@beta_cinemas/"></a></li>
+                  <li><a class="instagram" data-original-title="instagram" href=" https://www.instagram.com/betacinemas/"></a></li>
+                </ul>
+              </div>
+              <div class="col-md-4 col-sm-16 pre-footer-col">
+                <h2>HỖ TRỢ</h2>
+                <ul class="list-unstyled" style="float: left;">    
+                  <li class="item ">
+                      <a href="/search " title="Tìm kiếm ">Tìm kiếm </a>
+                  </li>
+                  <li class="item ">
+                      <a href="/pages/about-us " title="Giới thiệu ">Giới thiệu</a>
+                  </li>
+                  <li class="item ">
+                      <a href="/pages/chinh-sach-doi-tra " title="Chính sách đổi trả ">Chính sách đổi trả</a>
+                  </li>
+                  <li class="item ">
+                      <a href="/pages/chinh-sach-bao-mat " title="Chính sách bảo mật ">Chính sách bảo mật</a>
+                  </li>
+                  <li class="item ">
+                      <a href="/pages/dieu-khoan-dich-vu " title="Điều khoản dịch vụ ">Điều khoản dịch vụ</a>
+                  </li>
+                  <li class="item ">
+                      <a href="/pages/lien-he " title="Liên hệ ">Liên hệ</a>
+                </li>
+              </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END PRE-FOOTER -->
+</body>
+</html>
